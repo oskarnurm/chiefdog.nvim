@@ -33,7 +33,7 @@ local groups = {
   Normal       = { bg = c.bg, fg = c.fg },
   NormalFloat  = { bg = c.bg, fg = c.fg },
   FloatBorder  = { bg = c.bg, fg = c.line },
-  Cursor       = { bg = "#ffffff", fg = c.bg },
+  Cursor       = { bg = c.definition, fg = c.bg },
   CursorLine   = { bg = c.cursor },
   CursorLineNr = { fg = c.definition, bold = true },
   LineNr       = { fg = c.line },
