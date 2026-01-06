@@ -38,7 +38,7 @@ end
 
 function M.reload()
 	for name, _ in pairs(package.loaded) do
-		if name:match("^koda%..*") or name == "koda" then
+		if name:match("^koda") then -- This regex ensures we clear koda, koda.utils, koda.groups.editor, etc.
 			package.loaded[name] = nil
 		end
 	end
