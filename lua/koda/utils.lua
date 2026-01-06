@@ -1,3 +1,4 @@
+-- lua/koda/utils.lua
 local M = {}
 
 ---@param color string
@@ -33,6 +34,15 @@ function M.blend(color, base_color, alpha)
 	local result = string.format("#%02X%02X%02X", blend_channel(1), blend_channel(2), blend_channel(3))
 
 	return result
+end
+
+function M.reload()
+	for name, _ in pairs(package.loaded) do
+		if name:match("^koda%..*") or name == "koda" then
+			package.loaded[name] = nil
+		end
+	end
+	vim.cmd("colorscheme koda")
 end
 
 return M
