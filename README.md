@@ -1,19 +1,14 @@
-# Koda.nvim
-
-> _"Code's quiet companion."_
-
-A minimalistic theme for Neovim, written in Lua.
-
-## Example:
+<div align="center"><h1>Koda</h1></div>
+<p align="center">Code's quiet companion. A minimalistic theme for Neovim, written in Lua.</p>
 
 <img width="1487" height="916" alt="image" src="https://github.com/user-attachments/assets/5c118fcf-b30a-4606-8200-fdfaba4d3993" />
 
 > [!NOTE]
-> Developed on a 14" XDR retina display, your mileage may vary depending on the quality and brightness of the screen you use.
+> Developed on a 14" XDR retina display, your mileage may vary depending on your screen and brightness.
 
 ## Installation:
 
-[lazy.nvim](https://github.com/folke/lazy.nvim)
+[lazy.nvim:](https://github.com/folke/lazy.nvim)
 
 ```lua
 {
@@ -26,7 +21,7 @@ A minimalistic theme for Neovim, written in Lua.
 }
 ```
 
-[vim.pack](https://neovim.io/doc/user/pack.html#vim.pack)
+[vim.pack:](https://neovim.io/doc/user/pack.html#vim.pack)
 
 ```lua
 vim.pack.add({
@@ -38,17 +33,18 @@ vim.cmd("colorscheme koda")
 
 ## Configuration
 
-Calling `setup` is **not required**. Use if you wish to override the following defaults:
+You only need to call `setup` if you wish to override the following defaults:
 
 ```lua
 require("koda").setup({
-    bold = true           -- Enable bold for functions and keywords
+    bold = true           -- Disable bold for functions and keywords
     italics = false,      -- Enable italics for comments and strings
     transparent = false,  -- Enable for transparent terminal backgrounds
 
-    -- Override specific palette colors
+    -- Override colors
     -- These will be merged into the active palette (Dark or Light)
-    colors = { -- Example colors for dark background
+    -- Example colors for dark background
+    colors = {
         transparent = "none",
         bg          = "#101010",
         fg          = "#b0b0b0",
@@ -58,7 +54,7 @@ require("koda").setup({
         number      = "#808080",
         keyword     = "#777777",
         func        = "#ffffff",
-        string      = "#ffffff", -- you could change the color of the strings
+        string      = "#ffffff",
         constant    = "#d9ba73",
         visual      = "#0058D0",
         hint        = "#8ebeec",
@@ -70,6 +66,7 @@ require("koda").setup({
 })
 ```
 
+<!--
 ## Color Groups
 
 When overriding colors, you can use any of the following keys from the colors palette:
@@ -89,6 +86,7 @@ When overriding colors, you can use any of the following keys from the colors pa
 | error    | Error messages, delete                     |
 | add      | Diff/git related add                       |
 | change   | Diff/git related change                    |
+-->
 
 ## Plugin support:
 
