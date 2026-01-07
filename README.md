@@ -38,7 +38,7 @@ You only need to call `setup` if you wish to override the following defaults:
 ```lua
 require("koda").setup({
     bold = true           -- Disable bold for functions and keywords
-    italics = false,      -- Enable italics for comments and strings
+    italic = false,      -- Enable italics for comments and strings
     transparent = false,  -- Enable for transparent terminal backgrounds
 
     -- Override colors
