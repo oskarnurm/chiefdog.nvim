@@ -1,4 +1,6 @@
 -- lua/koda/groups/syntax.lua
+local utils = require("koda.utils")
+
 local M = {}
 
 function M.get(c, opts)
@@ -32,7 +34,7 @@ function M.get(c, opts)
 			Constant          = { fg = c.const },
 			Macro             = { fg = c.const },
 			Comment           = { fg = c.comment, italic = opts.italic },
-			Todo              = { fg = c.bg, bg = c.info, bold = true },
+			Todo              = { fg = c.bg, bg = c.fg , bold = true },
 			Special           = { fg = c.fg },
 			SpecialChar       = { link = "Special" },
 			SpecialComment    = { link = "Comment" },
