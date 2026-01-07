@@ -8,13 +8,14 @@ local config = require("koda.config")
 function M.setup(opts)
 	config.setup(opts)
 
-	-- Reloading the colorscheme with user command
+	-- Option to reload the colorscheme with "KodaFetch" usercmd.
+	-- Usefull while in dev and testing out colors
 	vim.api.nvim_create_user_command("KodaFetch", function()
 		require("koda.utils").reload()
 	end, {})
 end
 
--- Reload colorscheme when the background changes
+-- Reload the colorscheme when the background changes
 vim.api.nvim_create_autocmd("OptionSet", {
 	pattern = "background",
 	callback = function()
