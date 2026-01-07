@@ -4,10 +4,11 @@ local M = {}
 function M.get(c, opts)
     -- stylua: ignore
 		return {
-			DiagnosticError = { fg = c.danger },
-			DiagnosticWarn  = { fg = c.warning },
-			DiagnosticHint  = { fg = c.info },
-			DiagnosticInfo  = { fg = c.fg },
+			DiagnosticError       = { fg = c.danger },
+			DiagnosticWarn        = { fg = c.warning },
+			DiagnosticHint        = { fg = c.info },
+			DiagnosticInfo        = { fg = c.fg },
+      ["@lsp.type.comment"] = {}, -- leave it empty so TODO comments work
 		}
 end
 
