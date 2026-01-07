@@ -6,9 +6,9 @@ local M = {}
 function M.get(c, opts)
     -- stylua: ignore
 		return {
-			Normal            = { fg = c.fg, bg = c.bg },
+			Normal            = { fg = c.fg, bg = opts.transparent and c.none or c.bg },
 			NormalFloat       = { link = "Normal" },
-			FloatBorder       = { fg = c.border, bg = c.bg, },
+			FloatBorder       = { fg = c.border, bg = opts.transparent and c.none or c.bg, },
 			Cursor            = { fg = c.fg, bg = c.fg },
 			TermCursor        = { link = "Cursor" },
       lCursor           = { link = "Cursor" },
@@ -17,14 +17,14 @@ function M.get(c, opts)
 			CursorLine        = { bg = c.line },
 			CursorLineNr      = { fg = c.border, bold = true },
 			LineNr            = { fg = c.dim },
-			StatusLine        = { fg = c.fg, bg = c.line },
+			StatusLine        = { fg = c.fg, bg = opts.transparent and c.none or c.line },
 			StatusLineNC      = { link = "Normal" },
 			StatusLineTerm    = { link = "StatusLine" },
 			StatusLineTermNC  = { link = "StatusLineNC" },
 			WinBar            = { link = "Normal" },
 			WinBarNC          = { link = "Normal" },
 			WinSeparator      = { fg = c.border },
-			Pmenu             = { bg = c.none },
+			Pmenu             = { bg = opts.transparent and c.none or c.bg },
 			PmenuSel          = { fg = c.bg, bg = c.emphasis, bold = true },
 			PmenuThumb        = { bg = c.fg },
 			PmenuMatch        = { fg = c.const, bold = true },
