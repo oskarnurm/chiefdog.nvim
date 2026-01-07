@@ -9,10 +9,10 @@ local M = {}
 
 ---@type UserConfig
 M.defaults = {
-	bold = true,
-	italic = false,
-	transparent = false,
-	colors = {},
+  bold = true,
+  italic = false,
+  transparent = false,
+  colors = {},
 }
 
 ---@type UserConfig
@@ -20,7 +20,7 @@ M.options = vim.deepcopy(M.defaults)
 
 ---@param opts UserConfig|nil
 function M.setup(opts)
-	M.options = vim.tbl_deep_extend("force", M.defaults, opts or {})
+  M.options = vim.tbl_deep_extend("force", M.defaults, opts or {})
 end
 
 return M

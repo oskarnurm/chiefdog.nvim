@@ -3,16 +3,16 @@ local M = {}
 
 ---@param color string
 local function color_to_rgb(color)
-	local function byte(value, offset)
-		return bit.band(bit.rshift(value, offset), 0xFF)
-	end
+  local function byte(value, offset)
+    return bit.band(bit.rshift(value, offset), 0xFF)
+  end
 
-	local new_color = vim.api.nvim_get_color_by_name(color)
-	if new_color == -1 then
-		new_color = vim.opt.background:get() == "dark" and 000 or 255255255
-	end
+  local new_color = vim.api.nvim_get_color_by_name(color)
+  if new_color == -1 then
+    new_color = vim.opt.background:get() == "dark" and 000 or 255255255
+  end
 
-	return { byte(new_color, 16), byte(new_color, 8), byte(new_color, 0) }
+  return { byte(new_color, 16), byte(new_color, 8), byte(new_color, 0) }
 end
 
 --- Blends two colors based on alpha transparency.
@@ -23,26 +23,26 @@ end
 ---@param alpha number Blend factor (0 to 1)
 ---@return string # A hex color string like "#RRGGBB"
 function M.blend(fg, bg, alpha)
-	local fg_rgb = color_to_rgb(fg)
-	local bg_rgb = color_to_rgb(bg)
+  local fg_rgb = color_to_rgb(fg)
+  local bg_rgb = color_to_rgb(bg)
 
-	local function blend_channel(i)
-		local ret = (alpha * fg_rgb[i] + ((1 - alpha) * bg_rgb[i]))
-		return math.floor(math.min(math.max(0, ret), 255) + 0.5)
-	end
+  local function blend_channel(i)
+    local ret = (alpha * fg_rgb[i] + ((1 - alpha) * bg_rgb[i]))
+    return math.floor(math.min(math.max(0, ret), 255) + 0.5)
+  end
 
-	local result = string.format("#%02X%02X%02X", blend_channel(1), blend_channel(2), blend_channel(3))
+  local result = string.format("#%02X%02X%02X", blend_channel(1), blend_channel(2), blend_channel(3))
 
-	return result
+  return result
 end
 
 function M.reload()
-	for name, _ in pairs(package.loaded) do
-		if name:match("^koda") then -- This regex ensures we clear koda, koda.utils, koda.groups.editor, etc.
-			package.loaded[name] = nil
-		end
-	end
-	vim.cmd("colorscheme koda")
+  for name, _ in pairs(package.loaded) do
+    if name:match("^koda") then -- This regex ensures we clear koda, koda.utils, koda.groups.editor, etc.
+      package.loaded[name] = nil
+    end
+  end
+  vim.cmd("colorscheme koda")
 end
 
 return M

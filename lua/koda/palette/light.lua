@@ -1,10 +1,10 @@
 -- lua/koda/palette/light.lua
 -- stylua: ignore
 return {
-	none        = "none",
+  none        = "none",
   bg_solid    = "#fAf9F5",
-	bg          = "#fAf9F5",
-	fg          = "#101010",
+  bg          = "#fAf9F5",
+  fg          = "#101010",
   line        = "#ebebeb",
   paren       = "#d7d7d7",
   keyword     = "#3d3d3d",
@@ -14,10 +14,10 @@ return {
   emphasis    = "#000000",
   func        = "#000000",
   string      = "#407f00",
-	const       = "#b07700",
+  const       = "#b07700",
   highlight   = "#006acf",
   info        = "#0253be",
-	success     = "#407f00",
+  success     = "#407f00",
   warning     = "#b07700",
   danger      = "#ca0043",
 }
