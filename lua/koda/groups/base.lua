@@ -4,7 +4,6 @@ local utils = require("koda.utils")
 local M = {}
 
 function M.get(c, opts)
-	local bg = c.bg == "none" and "#101010" or c.bg
     -- stylua: ignore
 		return {
 			Normal            = { fg = c.fg, bg = c.bg },
@@ -29,7 +28,7 @@ function M.get(c, opts)
 			PmenuSel          = { fg = c.bg, bg = c.emphasis, bold = true },
 			PmenuThumb        = { bg = c.fg },
 			PmenuMatch        = { fg = c.const, bold = true },
-			Visual            = { fg = c.emphasis, bg = utils.blend(c.highlight, bg, 0.4) },
+			Visual            = { fg = c.emphasis, bg = utils.blend(c.highlight, c.bg_solid, 0.4) },
 			Search            = { link = "Visual" },
 			IncSearch         = { link = "Search" },
 			CurSearch         = { link = "Search" },
