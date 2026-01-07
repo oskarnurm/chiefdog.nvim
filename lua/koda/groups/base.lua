@@ -43,6 +43,10 @@ function M.get(c, opts)
 			Directory         = { fg = c.info },
 			QuickFixLine      = { fg = c.const, underline = true },
 			qfLineNr          = { fg = c.dim },
+      DiffAdd           = { fg = c.success, bg = utils.blend(c.success, c.bg_solid, 0.2) },
+      DiffChange        = { fg = c.warning, bg = utils.blend(c.warning, c.bg_solid, 0.2) },
+      DiffDelete        = { fg = c.danger, bg = utils.blend(c.danger, c.bg_solid, 0.2) },
+      DiffText          = { fg = c.warning, bg = utils.blend(c.warning, c.bg_solid, 0.4) },
 		}
 end
 
