@@ -10,7 +10,7 @@ local M = {}
 M.defaults = {
 	bold = true,
 	italic = false,
-	transparency = false,
+	transparent = false,
 	colors = {},
 }
 
