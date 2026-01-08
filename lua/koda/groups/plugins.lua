@@ -2,22 +2,38 @@
 local M = {}
 
 function M.get(c, opts)
-    -- stylua: ignore
-    return {
-      -- Gitsigns
-      GitSignsAdd    = { fg = c.success },
-      GitSignsChange = { fg = c.warning },
-      GitSignsDelete = { fg = c.danger },
-      -- Blink
-      BlinkCmpLabelMatch = { fg = c.const },
-      -- Mini.pick
-      MiniPickMatchRanges = { fg = c.const },
-      -- Oil
-      OilCreate = { fg = c.success },
-      -- Snacks
-      SnacksPickerDir = { fg = c.keyword },
-      SnacksPickerMatch = { fg = c.const },
-    }
+  return {
+    -- gitsigns.nvim
+    GitSignsAdd = { fg = c.success },
+    GitSignsChange = { fg = c.warning },
+    GitSignsDelete = { fg = c.danger },
+    -- blink.cmp
+    BlinkCmpLabelMatch = { fg = c.const },
+    -- mini.nvim
+    MiniPickMatchRanges = { fg = c.const },
+    MiniStatuslineModeNormal = { fg = c.bg, bg = c.fg },
+    -- telescope.nvim
+    TelescopeMatching = { fg = c.const },
+    -- oil.nvim
+    OilCreate = { fg = c.success },
+    -- snacks.nvim
+    SnacksPickerDir = { fg = c.keyword },
+    SnacksPickerMatch = { fg = c.const },
+    -- fzf-lua
+    FzfLuaNormal = { fg = c.fg, bg = c.bg },
+    -- dashboard.nvim
+    DashboardProjectTitle = { link = "Title" },
+    DashboardMruTitle = { link = "Title" },
+    -- flash.nvim
+    FlashLabel = { bg = c.bg, fg = c.const, bold = true },
+    -- modes.nvim
+    ModesCopy = { bg = c.keyword },
+    ModesDelete = { bg = c.danger },
+    ModesFormat = { bg = c.func },
+    ModesReplace = { bg = c.warning },
+    ModesVisual = { bg = c.highlight },
+    ModesInsert = { bg = c.const },
+  }
 end
 
 return M
