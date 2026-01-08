@@ -2,7 +2,6 @@
 -- stylua: ignore
 return {
   none        = "none",
-  bg_solid    = "#101010",
   bg          = "#101010",
   fg          = "#b0b0b0",
   line        = "#272727",
