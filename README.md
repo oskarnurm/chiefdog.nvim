@@ -108,7 +108,7 @@ require("koda").setup({
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [mini.pick](https://github.com/nvim-mini/mini.pick)
 - [oil.nvim](https://github.com/stevearc/oil.nvim)
-- [snacks.nvim](https://github.com/folke/snacks.nvim)
+- [snacks.picker](https://github.com/folke/snacks.nvim/blob/main/docs/picker.md)
 
 ## Language support
 
