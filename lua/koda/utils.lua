@@ -23,6 +23,11 @@ end
 ---@param alpha number Blend factor (0 to 1)
 ---@return string # A hex color string like "#RRGGBB"
 function M.blend(fg, bg, alpha)
+  -- Safeguard against calculating blend with 'none' color.
+  if bg == nil or bg:lower() == "none" then
+    bg = vim.o.background == "dark" and "#101010" or "#fAf9f5"
+  end
+
   local fg_rgb = color_to_rgb(fg)
   local bg_rgb = color_to_rgb(bg)
 
