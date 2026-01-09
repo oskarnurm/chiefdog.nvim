@@ -51,9 +51,18 @@ vim.cmd("colorscheme koda")
   
 ```lua
 require("koda").setup({
-    bold = true,          -- disable bold for functions and keywords
-    italic = false,       -- enable italics for comments and strings
     transparent = false,  -- enable for transparent backgrounds
+
+    -- Style to be applied to different syntax groups.
+    -- Common use case would be to set either `italic = true` or `bold = true` for a desired group.
+    -- See `:help nvim_set_hl` for more valid values.
+    styles = {
+       functions    = { bold = true },
+       keywords     = {},
+       comments     = {},
+       strings      = {},
+       constants    = {},
+    },
 
     -- Override colors
     -- These will be merged into the active palette (Dark or Light)
