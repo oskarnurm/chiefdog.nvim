@@ -1,6 +1,10 @@
 -- lua/koda/groups/lsp.lua
 local M = {}
 
+--- Get LSP highlight groups
+---@param c koda.Palette The color palette
+---@param opts koda.Config User configuration
+---return table<string, table> # highlight groups table
 function M.get(c, opts)
     -- stylua: ignore
     return {
@@ -9,7 +13,7 @@ function M.get(c, opts)
       DiagnosticHint        = { fg = c.info },
       DiagnosticInfo        = { fg = c.fg },
       LspInlayHint          = { fg = c.dim },
-      ["@lsp.type.comment"] = {}, -- use treesitter styles for TODO comments to work
+      ["@lsp.type.comment"] = {}, -- use treesitter styles
     }
 end
 

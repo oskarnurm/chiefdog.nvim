@@ -3,8 +3,7 @@ local M = {}
 
 local config = require("koda.config")
 
----@param opts table|nil User configuration
----@usage require('koda').setup({ transparent = true })
+---@param opts koda.Config|nil User configuration
 function M.setup(opts)
   config.setup(opts)
 

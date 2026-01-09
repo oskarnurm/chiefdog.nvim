@@ -1,6 +1,10 @@
 -- lua/koda/groups/treesitter.lua
 local M = {}
 
+--- Get Treesitter highlight groups
+---@param c koda.Palette The color palette
+---@param opts koda.Config User configuration
+---return table<string, table> # highlight groups table
 function M.get(c, opts)
     -- stylua: ignore
     return {
@@ -9,15 +13,12 @@ function M.get(c, opts)
       ["@variable.parameter"]          = { link = "Identifier" },
       ["@variable.parameter.builtin"]  = { link = "Identifier" },
       ["@variable.member"]             = { link = "Identifier" },
-
       ["@constant"]                    = { link = "Constant" },
       ["@constant.macro"]              = { link = "Constant" },
       ["@constant.builtin"]            = { link = "Constant" },
-
       ["@module"]                      = { link = "Structure" },
       ["@module.builtin"]              = { link = "Special" },
       ["@label"]                       = { link = "Structure" },
-
       ["@string"]                      = { link = "String" },
       ["@string.documentation"]        = { link = "Comment" },
       ["@string.regexp"]               = { link = "String" },
@@ -26,33 +27,25 @@ function M.get(c, opts)
       ["@string.special.symbol"]       = { link = "Special" },
       ["@string.special.path"]         = { link = "Special" },
       ["@string.special.url"]          = { link = "Underlined" },
-
       ["@character"]                   = { link = "Character" },
       ["@character.special"]           = { link = "Special" },
-
       ["@boolean"]                     = { link = "Boolean" },
       ["@number"]                      = { link = "Number" },
       ["@number.float"]                = { link = "Number" },
-
       ["@type"]                        = { link = "Type" },
       ["@type.builtin"]                = { link = "Type" },
       ["@type.definition"]             = { link = "Type" },
-
       ["@attribute"]                   = { link = "Keyword" },
       -- ["@attribute.builtin"]        = { link = "Keyword" },
       ["@property"]                    = { link = "Identifier" },
-
       ["@function"]                    = { link = "Function" },
       ["@function.builtin"]            = { link = "Function" },
       ["@function.call"]               = { link = "Function" },
       ["@function.macro"]              = { link = "Macro" },
-
       ["@function.method"]             = { link = "Function" },
       ["@function.method.call"]        = { link = "Function" },
-
       ["@constructor"]                 = { link = "Identifier" },
       ["@operator"]                    = { link = "Operator" },
-
       ["@keyword"]                     = { link = "Keyword" },
       -- ["@keyword.coroutine"]        = { link = "Keyword" },
       ["@keyword.function"]            = { link = "Keyword" },
@@ -64,31 +57,24 @@ function M.get(c, opts)
       ["@keyword.return"]              = { fg = c.emphasis },
       ["@keyword.debug"]               = { link = "Keyword" },
       ["@keyword.exception"]           = { link = "Exception" },
-
       ["@keyword.conditional"]         = { link = "Conditional" },
       ["@keyword.conditional.ternary"] = { link = "Conditional" },
-
       ["@keyword.directive"]           = { link = "Keyword" },
       ["@keyword.directive.define"]    = { link = "Keyword" },
-
       ["@punctuation"]                 = { link = "Keyword" },
       ["@punctuation.delimiter"]       = { link = "Identifier" },
       ["@punctuation.bracket"]         = { link = "Delimiter" },
       ["@punctuation.special"]         = { link = "Delimiter" },
-
       ["@comment"]                     = { link = "Comment" },
       ["@comment.documentation"]       = { link = "Comment" },
-
       ["@comment.error"]               = { fg = c.danger },
       ["@comment.warning"]             = { fg = c.warning },
       ["@comment.todo"]                = { fg = c.info },
       ["@comment.note"]                = { fg = c.emphasis },
-
       ["@markup.strong"]               = { bold = true },
       ["@markup.italic"]               = { italic = true },
       -- ["@markup.strikethrough"]     = {},
       -- ["@markup.underline"]         = {},
-
       ["@markup.heading"]              = { link = "Title" },
       ["@markup.quote"]                = { link = "Comment" },
       ["@markup.math"]                 = { link = "Special" },
@@ -96,11 +82,9 @@ function M.get(c, opts)
       ["@markup.link.uri"]             = { link = "Underlined" },
       ["@markup.list"]                 = { fg = c.const },
       ["@markup.raw"]                  = { fg = c.const },
-
       ["@diff.plus"]                   = { link = "DiffAdd" },
       ["@diff.minus"]                  = { link = "DiffDelete" },
       ["@diff.delta"]                  = { link = "DiffChange" },
-
       ["@tag"]                         = { link = "Keyword" },
       -- ["@tag.builtin"]                         = { link = "Keyword" },
       ["@tag.delimiter"]               = { link = "Keyword" },

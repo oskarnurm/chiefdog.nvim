@@ -17,13 +17,8 @@ vim.g.colors_name = "koda"
 
 -- Apply highlights
 local hl_groups = groups.setup(palette, config.options)
+hl_groups = require("koda.utils").resolve(hl_groups) -- unpack styles
 
 for group, hl in pairs(hl_groups) do
-  -- If the group has a style, merge it into the highlight properties
-  if hl.style and type(hl.style) == "table" then
-    hl = vim.tbl_extend("force", hl, hl.style)
-    hl.style = nil -- remove the custom 'style' key so Neovim doesn't complain
-  end
-
   vim.api.nvim_set_hl(0, group, hl)
 end
