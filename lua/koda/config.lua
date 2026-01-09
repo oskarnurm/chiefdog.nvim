@@ -1,30 +1,28 @@
 -- lua/koda/config.lua
 local M = {}
 
----@class UserConfig
----@field bold? boolean Enable/disable bold text for functions/returns (default: false)
----@field italic? boolean Enable/disable italicized text for comments/strings (default: false)
----@field transparent? boolean Enable/disable background transparency (default: false)
+---@class koda.Config
+---@field transparent? boolean Enable/disable background transparency
+---@field styles? table<string, table> Granular bold/italic styling
 ---@field colors? table<string, string> Override palette hex codes
 
----@type UserConfig
+---@type koda.Config
 M.defaults = {
   transparent = false,
-  -- stylua: ignore
   styles = {
-     functions    = { bold = true },
-     keywords     = {},
-     comments     = {},
-     strings      = {},
-     constants    = {},
+    functions = { bold = true },
+    keywords = {},
+    comments = {},
+    strings = {},
+    constants = {},
   },
   colors = {},
 }
 
----@type UserConfig
+---@type koda.Config
 M.options = vim.deepcopy(M.defaults)
 
----@param opts UserConfig|nil
+---@param opts koda.Config|nil
 function M.setup(opts)
   M.options = vim.tbl_deep_extend("force", M.defaults, opts or {})
 end

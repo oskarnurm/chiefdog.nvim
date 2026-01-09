@@ -1,6 +1,7 @@
 -- lua/koda/palette/light.lua
 -- stylua: ignore
-return {
+---@class koda.Palette
+local palette = {
   bg          = "#fAf9f5",
   fg          = "#101010",
   line        = "#ebebeb",
@@ -19,3 +20,5 @@ return {
   warning     = "#b07700",
   danger      = "#ca0043",
 }
+
+return palette

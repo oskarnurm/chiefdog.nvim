@@ -50,7 +50,7 @@ function M.get(c, opts)
       -- Todo              = { fg = c.fg, bg = c.bg , bold = true }, -- let Neovims handle this
 
       Added             = { fg = c.success },
-      Changed           = { fg = c.changed },
+      Changed           = { fg = c.warning },
       Removed           = { fg = c.danger },
     }
 end
