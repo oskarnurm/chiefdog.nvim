@@ -9,9 +9,25 @@ local M = {}
 
 ---@type UserConfig
 M.defaults = {
-  bold = true,
-  italic = false,
   transparent = false,
+  -- stylua: ignore
+  styles = {
+    functions    = { bold = true },
+    keywords     = {},
+    conditionals = {},
+    loops        = {},
+    labels       = {},
+    exceptions   = {},
+    strings      = {},
+    numbers      = {},
+    booleans     = {},
+    floats       = {},
+    constants    = {},
+    variables    = {},
+    types        = {},
+    comments     = {},
+    returns      = {},
+  },
   colors = {},
 }
 
