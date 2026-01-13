@@ -8,6 +8,7 @@ local M = {}
 function M.get(c, opts)
     -- stylua: ignore
     return {
+      DiagnosticOK          = { fg = c.success },
       DiagnosticError       = { fg = c.danger },
       DiagnosticWarn        = { fg = c.warning },
       DiagnosticHint        = { fg = c.info },
