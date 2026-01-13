@@ -13,7 +13,7 @@ function M.get(c, opts)
       DiagnosticWarn        = { fg = c.warning },
       DiagnosticHint        = { fg = c.info },
       DiagnosticInfo        = { fg = c.fg },
-      LspInlayHint          = { fg = c.dim },
+      LspInlayHint          = { fg = c.comment },
       ["@lsp.type.comment"] = {}, -- use treesitter styles
     }
 end
