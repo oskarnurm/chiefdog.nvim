@@ -19,6 +19,7 @@ function M.get(c, opts)
       CursorIM          = { link = "Cursor" },
       CursorColumn      = { link = "Cursor" },
       CursorLine        = { bg = c.line },
+      ColorColumn       = { bg = c.line },
       CursorLineNr      = { fg = c.border, bold = true },
       LineNr            = { fg = c.dim },
       StatusLine        = { fg = c.fg, bg = opts.transparent and "none" or c.line },
