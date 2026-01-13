@@ -5,10 +5,9 @@
 local palette = {
   bg          = "#101010",
   fg          = "#b0b0b0",
+  dim         = "#181818",
   line        = "#272727",
-  paren       = "#4d4d4d",
   keyword     = "#777777",
-  dim         = "#50585d",
   comment     = "#50585d",
   border      = "#ffffff",
   emphasis    = "#ffffff",
