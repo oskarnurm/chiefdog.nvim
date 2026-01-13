@@ -37,7 +37,7 @@ function M.get(c, opts)
       Search            = { link = "Visual" },
       IncSearch         = { link = "Search" },
       CurSearch         = { fg = c.bg, bg = c.const },
-      MatchParen        = { fg = c.fg, bg = c.paren },
+      MatchParen        = { fg = c.emphasis, underline = true },
       NonText           = { fg = c.line },
       EndOfBuffer       = { fg = c.line },
       Question          = { fg = c.const },
