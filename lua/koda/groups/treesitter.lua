@@ -1,6 +1,8 @@
 -- lua/koda/groups/treesitter.lua
 local M = {}
 
+local utils = require("koda.utils")
+
 --- Get Treesitter highlight groups
 ---@param c koda.Palette The color palette
 ---@param opts koda.Config User configuration
@@ -73,15 +75,26 @@ function M.get(c, opts)
       ["@comment.note"]                = { fg = c.emphasis },
       ["@markup.strong"]               = { bold = true },
       ["@markup.italic"]               = { italic = true },
-      -- ["@markup.strikethrough"]     = {},
-      -- ["@markup.underline"]         = {},
-      ["@markup.heading"]              = { link = "Title" },
+      ["@markup.strikethrough"]        = { fg = c.danger, strikethrough = true },
+      ["@markup.underline"]            = { underline = true },
+      ["@markup.heading"]              = { fg = c.info },
+      ["@markup.heading.gitcommit"]    = { fg = c.fg },
+      ["@markup.heading.1.markdown"]   = { fg = c.info, bg = utils.blend(c.info, c.bg, 0.1)},
+      ["@markup.heading.2.markdown"]   = { fg = c.const, bg = utils.blend(c.const, c.bg, 0.1)},
+      ["@markup.heading.3.markdown"]   = { fg = c.success, bg = utils.blend(c.success, c.bg, 0.1)},
+      ["@markup.heading.4.markdown"]   = { fg = c.highlight, bg = utils.blend(c.highlight, c.bg, 0.1)},
+      ["@markup.heading.5.markdown"]   = { fg = c.danger, bg = utils.blend(c.danger, c.bg, 0.1)},
+      ["@markup.heading.6.markdown"]   = { fg = c.keyword, bg = utils.blend(c.keyword, c.bg, 0.1)},
       ["@markup.quote"]                = { link = "Comment" },
       ["@markup.math"]                 = { link = "Special" },
-      ["@markup.link"]                 = { link = "Underlined" },
-      ["@markup.link.uri"]             = { link = "Underlined" },
-      ["@markup.list"]                 = { fg = c.const },
+      ["@markup.link"]                 = { fg = c.info },
+      ["@markup.link.label"]           = { fg = c.info },
+      ["@markup.link.url"]             = { fg = c.info, underline = true },
       ["@markup.raw"]                  = { fg = c.const },
+      ["@markup.raw.block"]            = { fg = c.const },
+      ["@markup.list"]                 = { fg = c.emphasis },
+      ["@markup.list.checked"]         = { fg = c.success },
+      ["@markup.list.unchecked"]       = { fg = c.danger },
       ["@diff.plus"]                   = { link = "DiffAdd" },
       ["@diff.minus"]                  = { link = "DiffDelete" },
       ["@diff.delta"]                  = { link = "DiffChange" },
