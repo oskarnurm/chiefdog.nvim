@@ -40,6 +40,14 @@ function M.get(c, opts)
     ModesReplace = { bg = c.warning },
     ModesVisual = { bg = c.highlight },
     ModesInsert = { bg = c.const },
+    -- render-markdown.nvim
+    RenderMarkdownCode = { bg = c.dim },
+    RenderMarkdownH1Bg = { link = "@markup.heading.1.markdown" },
+    RenderMarkdownH2Bg = { link = "@markup.heading.2.markdown" },
+    RenderMarkdownH3Bg = { link = "@markup.heading.3.markdown" },
+    RenderMarkdownH4Bg = { link = "@markup.heading.4.markdown" },
+    RenderMarkdownH5Bg = { link = "@markup.heading.5.markdown" },
+    RenderMarkdownH6Bg = { link = "@markup.heading.6.markdown" },
   }
 end
 

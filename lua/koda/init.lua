@@ -1,11 +1,9 @@
 -- lua/koda/init.lua
 local M = {}
 
-local config = require("koda.config")
-
 ---@param opts koda.Config|nil User configuration
 function M.setup(opts)
-  config.setup(opts)
+  require("koda.config").setup(opts)
 
   -- Option to reload the colorscheme with "KodaFetch" usercmd.
   -- Usefull while in dev and testing out colors
