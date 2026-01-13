@@ -1,11 +1,13 @@
 -- lua/koda/groups/plugins.lua
 local M = {}
 
+local utils = require("koda.utils")
 --- Get plugin highlight groups
 ---@param c koda.Palette The color palette
 ---@param opts koda.Config User configuration
 ---return table<string, table> # highlight groups table
 function M.get(c, opts)
+  local h1Bg = utils.blend(c.fg, c.bg, 0.1)
   return {
     -- gitsigns.nvim
     GitSignsAdd = { fg = c.success },
@@ -42,12 +44,12 @@ function M.get(c, opts)
     ModesInsert = { bg = c.const },
     -- render-markdown.nvim
     RenderMarkdownCode = { bg = c.dim },
-    RenderMarkdownH1Bg = { link = "@markup.heading.1.markdown" },
-    RenderMarkdownH2Bg = { link = "@markup.heading.2.markdown" },
-    RenderMarkdownH3Bg = { link = "@markup.heading.3.markdown" },
-    RenderMarkdownH4Bg = { link = "@markup.heading.4.markdown" },
-    RenderMarkdownH5Bg = { link = "@markup.heading.5.markdown" },
-    RenderMarkdownH6Bg = { link = "@markup.heading.6.markdown" },
+    RenderMarkdownH1Bg = { bg = h1Bg },
+    RenderMarkdownH2Bg = { bg = h1Bg },
+    RenderMarkdownH3Bg = { bg = h1Bg },
+    RenderMarkdownH4Bg = { bg = h1Bg },
+    RenderMarkdownH5Bg = { bg = h1Bg },
+    RenderMarkdownH6Bg = { bg = h1Bg },
   }
 end
 
