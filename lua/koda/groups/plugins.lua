@@ -51,6 +51,15 @@ function M.get(c, opts)
     RenderMarkdownH4Bg = { bg = h1Bg },
     RenderMarkdownH5Bg = { bg = h1Bg },
     RenderMarkdownH6Bg = { bg = h1Bg },
+    -- trouble.nvim
+    TroubleIconDirectory = { fg = c.emphasis },
+    TroubleDirectory = { fg = c.emphasis },
+    TroubleQfFilename = { fg = c.emphasis },
+    TroubleDiagnosticsBaseName = { fg = c.emphasis },
+    TroubleDiagnosticsCount = { fg = c.danger },
+    TroubleFsCount = { fg = c.danger },
+    TroubleLspCount = { fg = c.warning },
+    TroubleQfCount = { fg = c.warning },
   }
 end
 
