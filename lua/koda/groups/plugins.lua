@@ -1,4 +1,3 @@
--- lua/koda/groups/plugins.lua
 local utils = require("koda.utils")
 
 local M = {}

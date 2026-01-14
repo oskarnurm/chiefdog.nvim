@@ -1,4 +1,3 @@
--- colors/koda.lua
 local config = require("koda.config")
 local groups = require("koda.groups") -- points to lua/koda/groups/init.lua
 local palette = require("koda.palette." .. vim.o.background)

@@ -1,4 +1,3 @@
--- lua/koda/config.lua
 local M = {}
 
 ---@class koda.Config

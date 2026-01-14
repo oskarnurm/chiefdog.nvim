@@ -1,4 +1,3 @@
--- lua/koda/groups/lsp.lua
 local M = {}
 
 --- Get LSP highlight groups, see `:h lsp-highlight`

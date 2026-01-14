@@ -1,4 +1,3 @@
--- lua/koda/groups/treesitter.lua
 local M = {}
 
 --- Get Treesitter highlight groups, see `:h treesitter-highlight`

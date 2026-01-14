@@ -1,4 +1,3 @@
--- lua/koda/groups/syntax.lua
 local M = {}
 
 --- Get syntax highlight groups, see `:h syntax`

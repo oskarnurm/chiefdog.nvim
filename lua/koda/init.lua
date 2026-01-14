@@ -1,4 +1,3 @@
--- lua/koda/init.lua
 local M = {}
 
 ---@param opts koda.Config|nil User configuration

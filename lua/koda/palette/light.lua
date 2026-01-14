@@ -1,5 +1,3 @@
--- lua/koda/palette/light.lua
-
 -- stylua: ignore
 ---@class koda.Palette
 local palette = {

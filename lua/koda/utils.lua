@@ -1,4 +1,3 @@
--- lua/koda/utils.lua
 local M = {}
 
 --- Converts a hex color string to an RGB table

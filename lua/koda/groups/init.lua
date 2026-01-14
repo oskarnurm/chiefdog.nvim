@@ -1,4 +1,3 @@
--- koda/groups/init.lua
 local M = {}
 
 ---@param c table Color palette
