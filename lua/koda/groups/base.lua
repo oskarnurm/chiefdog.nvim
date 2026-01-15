@@ -34,7 +34,7 @@ function M.get(c, opts)
     PmenuMatch        = { fg = c.const, bold = true },
     Visual            = { fg = c.emphasis, bg = utils.blend(c.highlight, c.bg, 0.4) },
     Search            = { link = "Visual" },
-    IncSearch         = { link = "Search" },
+    IncSearch         = { link = "CurSearch" },
     CurSearch         = { fg = c.bg, bg = c.const },
     MatchParen        = { fg = c.emphasis, underline = true },
     NonText           = { fg = c.line },
