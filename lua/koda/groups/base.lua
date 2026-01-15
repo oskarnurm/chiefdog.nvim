@@ -6,7 +6,7 @@ local M = {}
 ---@param c koda.Palette Color palette
 ---@param opts koda.Config User configuration
 ---return table<string, table> # Groups table
-function M.get(c, opts)
+function M.get_hl(c, opts)
   -- stylua: ignore
   return {
     Normal            = { fg = c.fg, bg = opts.transparent and "none" or c.bg },

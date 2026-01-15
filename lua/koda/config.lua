@@ -4,6 +4,8 @@ local M = {}
 ---@field transparent? boolean Enable/disable background transparency
 ---@field styles? table<string, table> Enable/disable bold/italic styling
 ---@field colors? table<string, string> Override palette hex codes
+---@field plugins? { all: boolean, auto: boolean } Plugin loading preference
+---@field cache? boolean Enable/disable caching
 
 ---@type koda.Config
 M.defaults = {
@@ -16,6 +18,8 @@ M.defaults = {
     constants = {},
   },
   colors = {},
+  plugins = { all = false, auto = true },
+  cache = true,
 }
 
 ---@type koda.Config

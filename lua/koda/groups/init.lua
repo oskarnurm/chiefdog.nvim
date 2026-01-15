@@ -32,7 +32,7 @@ M.plugins = {
 ---@return table
 function M.get_hl(name, c, opts)
   local module = utils.smart_require("koda.groups." .. name)
-  return module.get(c, opts)
+  return module.get_hl(c, opts)
 end
 
 ---@param c table Color palette

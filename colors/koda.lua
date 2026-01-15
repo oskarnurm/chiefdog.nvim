@@ -16,7 +16,6 @@ vim.g.colors_name = "koda"
 
 -- Unpack and resolve custom styles
 local hl_groups = groups.setup(palette, config.options)
-hl_groups = require("koda.utils").resolve(hl_groups)
 
 -- Apply highlights
 for group, hl in pairs(hl_groups) do
