@@ -17,6 +17,25 @@ function M.smart_require(modname)
   package.loaded[modname] = result -- manually cache the result
   return result
 end
+--- Reads the given file and returns its contents
+---@param fname string
+---@return string|nil
+function M.read(fname)
+  local file = assert(io.open(fname, "r"))
+  local data = file:read("*a")
+  file:close()
+  return data
+end
+
+--- Writes to the given file, erasing all previous data.
+---@param fname string File name
+---@param data string Data to be written
+function M.write(fname, data)
+  vim.fn.mkdir(vim.fn.fnamemodify(fname, ":h"), "p")
+  local file = assert(io.open(fname, "w+"))
+  file:write(data)
+  file:close()
+end
 --- Converts a hex color string to an RGB table
 ---@param hex string
 ---@return table
