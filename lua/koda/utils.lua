@@ -1,5 +1,7 @@
 local M = {}
 
+M.cache = {}
+
 -- Get the root of the lua directory
 local root = debug.getinfo(1, "S").source:sub(2)
 root = vim.fn.fnamemodify(root, ":h:h") -- "/path/to/nvim/lua"
@@ -36,6 +38,38 @@ function M.write(fname, data)
   file:write(data)
   file:close()
 end
+
+--- Returns the path to the cache file for a given key
+---@param key string Unique key for cache
+---@return string
+function M.cache.file(key)
+  return vim.fn.stdpath("cache") .. "/koda-" .. key .. ".json"
+end
+
+--- Safely read and decode the cached file from disk
+---@param key string Unique key for cache
+---@return koda.Cache|nil
+function M.cache.read(key)
+  local ok, data = pcall(function()
+    return vim.json.decode(M.read(M.cache.file(key)), { luanil = { object = true, array = true } })
+  end)
+  return ok and data or nil
+end
+
+--- Encodes and writes data to the cached directory
+---@param key string Unique key for cache
+---@param data koda.Cache
+function M.cache.write(key, data)
+  pcall(M.write, M.cache.file(key), vim.json.encode(data))
+end
+
+--- Deletes Koda's cache files from the system
+function M.cache.clear()
+  for _, style in ipairs({ "dark", "light" }) do
+    vim.uv.fs_unlink(M.cache.file(style))
+  end
+end
+
 --- Converts a hex color string to an RGB table
 ---@param hex string
 ---@return table
