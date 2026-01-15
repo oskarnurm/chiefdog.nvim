@@ -1,5 +1,22 @@
 local M = {}
 
+-- Get the root of the lua directory
+local root = debug.getinfo(1, "S").source:sub(2)
+root = vim.fn.fnamemodify(root, ":h:h") -- "/path/to/nvim/lua"
+
+--- Like 'require', but skips searching Neovim's runtimepath if no module found, using the root path
+---@param modname string Module name
+---@return table
+function M.smart_require(modname)
+  if package.loaded[modname] then
+    return package.loaded[modname]
+  end
+  -- Convert dot notation to file path, e.g., "koda.groups.base" -> "koda/groups/base.lua"
+  local file = root .. "/" .. modname:gsub("%.", "/") .. ".lua"
+  local result = loadfile(file)() -- load and execute the file
+  package.loaded[modname] = result -- manually cache the result
+  return result
+end
 --- Converts a hex color string to an RGB table
 ---@param hex string
 ---@return table
