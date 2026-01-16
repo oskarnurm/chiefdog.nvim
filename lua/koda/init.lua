@@ -11,10 +11,15 @@ function M.setup(opts)
 end
 
 -- Reload the colorscheme when the background changes
+-- HACK: keep track of 'old_bg' and 'new_bg' to prevent
+-- the colorscheme reloading twice during startup
+local old_bg = vim.o.background
 vim.api.nvim_create_autocmd("OptionSet", {
   pattern = "background",
   callback = function()
-    if vim.g.colors_name == "koda" then
+    local new_bg = vim.v.option_new
+    if vim.g.colors_name == "koda" and old_bg ~= new_bg then
+      old_bg = new_bg
       vim.cmd("colorscheme koda")
     end
   end,
