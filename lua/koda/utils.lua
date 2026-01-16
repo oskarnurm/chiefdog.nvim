@@ -9,7 +9,8 @@ M.cache = {}
 local root = debug.getinfo(1, "S").source:sub(2)
 root = vim.fn.fnamemodify(root, ":h:h") -- "/path/to/nvim/lua"
 
---- Like 'require', but skips searching Neovim's runtimepath if no module found, using the root path instead
+--- Like 'require', but skips searching Neovim's runtimepath
+--- if no module found, using the root path instead
 ---@param modname string Module name
 ---@return table
 function M.smart_require(modname)
@@ -80,8 +81,8 @@ end
 function M.unpack(groups)
   for _, hl in pairs(groups) do
     if type(hl.style) == "table" then
-      for key, value in pairs(hl.style) do
-        hl[key] = value
+      for k, v in pairs(hl.style) do
+        hl[k] = v
       end
       hl.style = nil
     end
