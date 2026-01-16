@@ -3,7 +3,7 @@
 
 ---@class koda.Cache
 ---@field groups table<string, table> The compiled highlight groups
----@field inputs table The configuration fingerprint used to generate the groups
+---@field config table The configuration fingerprint used to generate the groups
 
 local utils = require("koda.utils")
 
@@ -27,18 +27,18 @@ M.plugins = {
 
 --- Gets highlights from a specific group
 ---@param name string Name of the group
----@param c table Color palette
+---@param colors table Color palette
 ---@param opts koda.Config User configuration
 ---@return table
-function M.get_hl(name, c, opts)
-  local module = utils.smart_require("koda.groups." .. name)
-  return module.get_hl(c, opts)
+function M.get(name, colors, opts)
+  local group = utils.smart_require("koda.groups." .. name)
+  return group.get_hl(colors, opts)
 end
 
----@param c table Color palette
+---@param colors table Color palette
 ---@param opts koda.Config User configuration
 ---@return table
-function M.setup(c, opts)
+function M.setup(colors, opts)
   -- Always laod base groups
   local groups = {
     base = true,
@@ -47,56 +47,68 @@ function M.setup(c, opts)
     lsp = true,
   }
 
-  -- Load all plugins if opts.plugins.all = true, else auto-detect plugins from lazy.nvim
+  -- Load highlights for plugins
+  -- either all or only active ones
+  -- managed by lazy.nvim or vim.pack
   if opts.plugins.all then
     for _, group in pairs(M.plugins) do
       groups[group] = true
     end
-  elseif opts.plugins.auto and package.loaded.lazy then
-    local lazy_plugins = require("lazy.core.config").plugins
-    for plugin, group in pairs(M.plugins) do
-      if lazy_plugins[plugin] then
-        groups[group] = true
+  elseif opts.plugins.auto then
+    -- lazy.nvim
+    if package.loaded.lazy then
+      local lazy_plugins = require("lazy.core.config").plugins
+      for plugin, group in pairs(M.plugins) do
+        if lazy_plugins[plugin] then
+          groups[group] = true
+        end
+      end
+    end
+    -- vim.pack
+    local ok, packdata = pcall(vim.pack.get)
+    if ok and packdata then
+      for _, plugin in ipairs(packdata) do
+        if plugin.active and M.plugins[plugin.spec.name] then
+          groups[M.plugins[plugin.spec.name]] = true
+        end
       end
     end
   end
-  -- TODO: add support for vim.pack, maybe via nvim-pack-lock.json?
 
-  -- Sort group names for consistent cache keys
+  -- Sort (in-place) group names for consistent cache keys
   local names = vim.tbl_keys(groups)
   table.sort(names)
 
-  local cache_key = vim.o.background
-  local cache = opts.cache and utils.cache.read(cache_key)
-
-  local inputs = {
-    colors = c,
+  local config = {
+    colors = colors,
     plugins = names,
     opts = {
-      transparent = opts.transparent,
       styles = opts.styles,
       colors = opts.colors,
+      transparent = opts.transparent,
     },
   }
 
-  -- Use cached results if available
-  local hl_groups = cache and vim.deep_equal(inputs, cache.inputs) and cache.groups
+  -- Check if we can use cached highlights
+  local cache_key = vim.o.background
+  local cache = opts.cache and utils.cache.read(cache_key)
+  local hl = cache and vim.deep_equal(config, cache.config) and cache.groups
 
-  -- Merge highlights from all enabled groups if not cahced
-  if not hl_groups then
-    hl_groups = {}
+  -- Generate highlights if cache miss
+  if not hl then
+    hl = {}
     for group in pairs(groups) do
-      local highlights = M.get_hl(group, c, opts)
-      for key, value in pairs(highlights) do
-        hl_groups[key] = value
+      for k, v in pairs(M.get(group, colors, opts)) do
+        hl[k] = v
       end
     end
-    utils.unpack(hl_groups)
+    utils.unpack(hl)
     if opts.cache then
-      utils.cache.write(cache_key, { groups = hl_groups, inputs = inputs })
+      utils.cache.write(cache_key, { groups = hl, config = config })
     end
   end
-  return hl_groups
+
+  return hl
 end
 
 return M
