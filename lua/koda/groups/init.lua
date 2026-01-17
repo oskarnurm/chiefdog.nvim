@@ -50,11 +50,11 @@ function M.setup(colors, opts)
   -- Load highlights for plugins
   -- either all or only active ones
   -- managed by lazy.nvim or vim.pack
-  if opts.plugins.all then
+  if not opts.auto then
     for _, group in pairs(M.plugins) do
       groups[group] = true
     end
-  elseif opts.plugins.auto then
+  elseif opts.auto then
     -- lazy.nvim
     if package.loaded.lazy then
       local lazy_plugins = require("lazy.core.config").plugins
