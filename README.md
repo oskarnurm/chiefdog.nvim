@@ -1,14 +1,12 @@
-<div align="center"><h1>Koda</h1></div>
-<p align="center">Code's quiet companion.</p>
-<p align="center"> A minimalist theme for Neovim, written in Lua.</p>
+<div align="center">
+  <h1>Koda</h1>
+  <p>"Code's quiet companion"</p>
+  <p>A minimalist theme for Neovim, written in Lua</p>
+</div>
 
-### Dark
 
-<img width="1127" height="746" alt="Screenshot 2026-01-07 at 21 34 20" src="https://github.com/user-attachments/assets/e892c373-ebc2-436d-8efa-7d1fd3d1f1a7" />
-
-### Light
-
-<img width="1127" height="746" alt="Screenshot 2026-01-07 at 21 36 22" src="https://github.com/user-attachments/assets/02a71d9a-3067-4bce-a535-afebb1e190dc" />
+![Dark Mode](https://github.com/user-attachments/assets/e892c373-ebc2-436d-8efa-7d1fd3d1f1a7)
+![Light Mode](https://github.com/user-attachments/assets/02a71d9a-3067-4bce-a535-afebb1e190dc)
 
 > [!NOTE]
 > Developed on a 14" XDR retina display, your mileage may vary depending on your screen and brightness.
