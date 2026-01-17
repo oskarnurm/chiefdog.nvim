@@ -13,6 +13,38 @@
 > [!NOTE]
 > Developed on a 14" XDR retina display, your mileage may vary depending on your screen and brightness.
 
+## Features
+
+- Minimalist design to be easy on the eyes while providing clear semantic distinction.
+- Supports the lates Neovim 0.12 features
+- Optimized Performance Caching
+- Automatically detects and loads highlights only for the plugins you actually use
+- Growing support for modern plugins
+
+<details>
+  <summary>Supported plugins</summary>
+
+> Please open an issue if you notice any problems, or a plugin you think should have explicit support is missing
+
+- [blink.cmp](https://github.com/saghen/blink.cmp)
+- [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)
+- [diffview.nvim](https://github.com/sindrets/diffview.nvim)
+- [flash.nvim](https://github.com/folke/flash.nvim)
+- [fzf-lua](https://github.com/ibhagwan/fzf-lua)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- [mini.pick](https://github.com/nvim-mini/mini.pick)
+- [mini.statusline](https://github.com/nvim-mini/mini.statusline)
+- [mini.icons](https://github.com/nvim-mini/mini.icons?tab=readme-ov-file)
+- [modes.nvim](https://github.com/mvllow/modes.nvim)
+- [oil.nvim](https://github.com/stevearc/oil.nvim)
+- [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+- [snacks.picker](https://github.com/folke/snacks.nvim/blob/main/docs/picker.md)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [trouble](https://github.com/folke/trouble.nvim)
+
+</details>
+
 ## Installation
 
 [lazy.nvim:](https://github.com/folke/lazy.nvim)
@@ -115,25 +147,6 @@ require("koda").setup({
 ````
 
 </details>
-
-## Plugin support
-
-> Below are some explicitly supported plugins. Note that `Koda` should support most other plugins by default...but I might be out of touch. Please open an issue if you notice any problems.
-
-- [blink.cmp](https://github.com/saghen/blink.cmp)
-- [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)
-- [diffview.nvim](https://github.com/sindrets/diffview.nvim)
-- [flash.nvim](https://github.com/folke/flash.nvim)
-- [fzf-lua](https://github.com/ibhagwan/fzf-lua)
-- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-- [mini.pick](https://github.com/nvim-mini/mini.pick)
-- [mini.statusline](https://github.com/nvim-mini/mini.statusline)
-- [modes.nvim](https://github.com/mvllow/modes.nvim)
-- [oil.nvim](https://github.com/stevearc/oil.nvim)
-- [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
-- [snacks.picker](https://github.com/folke/snacks.nvim/blob/main/docs/picker.md)
-- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ## Language support
 
