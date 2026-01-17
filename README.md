@@ -86,6 +86,13 @@ require("koda").setup({
         danger    = "#ff7676", -- removed git lines and error diagnostics
     },
 
+    -- Automatically enable highlights for plugins installed by your plugin manager
+    -- Currently only supports `lazy.nvim` and `vim.pack`
+    -- Set to false to install all plugin highlights or if your plugin manager is not supported
+    auto = true,
+
+    cache = true, -- cache for better performance
+
 })
 
 ````
