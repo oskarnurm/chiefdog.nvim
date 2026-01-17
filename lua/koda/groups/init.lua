@@ -1,10 +1,6 @@
 --- Parts of this file are adapted from: https://github.com/folke/tokyonight.nvim
 --- Licensed under the Apache License, Version 2.0
 
----@class koda.Cache
----@field groups table<string, table> The compiled highlight groups
----@field config table The configuration fingerprint used to generate the groups
-
 local utils = require("koda.utils")
 
 local M = {}
@@ -26,18 +22,18 @@ M.plugins = {
 }
 
 --- Gets highlights from a specific group
----@param name string Name of the group
----@param colors table Color palette
----@param opts koda.Config User configuration
----@return table
-function M.get(name, colors, opts)
+---@param name string
+---@param colors koda.Palette
+---@param opts koda.Config
+---@return koda.Highlights
+function M.get(name, colors, opts) -- TODO: rename this functions
   local group = utils.smart_require("koda.groups." .. name)
   return group.get_hl(colors, opts)
 end
 
----@param colors table Color palette
----@param opts koda.Config User configuration
----@return table
+---@param colors koda.Palette
+---@param opts koda.Config
+---@return koda.Highlights
 function M.setup(colors, opts)
   -- Always laod base groups
   local groups = {
@@ -47,8 +43,7 @@ function M.setup(colors, opts)
     lsp = true,
   }
 
-  -- Load highlights for plugins
-  -- either all or only active ones
+  -- Load highlights for plugins, either all or only active ones
   -- managed by lazy.nvim or vim.pack
   if not opts.auto then
     for _, group in pairs(M.plugins) do

@@ -1,9 +1,7 @@
 local M = {}
 
 --- Get syntax highlight groups, see `:h syntax`
----@param c koda.Palette Color palette
----@param opts koda.Config User configuration
----return table<string, table> # Groups table
+---@type koda.HighlightsFn
 function M.get_hl(c, opts)
   -- stylua: ignore
   return {

@@ -1,10 +1,8 @@
 local M = {}
 
 --- Get LSP highlight groups, see `:h lsp-highlight`
----@param c koda.Palette Color palette
----@param opts koda.Config User configuration
----return table<string, table> # Groups table
-function M.get_hl(c, opts)
+---@type koda.HighlightsFn
+function M.get_hl(c)
   -- stylua: ignore
   return {
     DiagnosticOK           = { fg = c.success },

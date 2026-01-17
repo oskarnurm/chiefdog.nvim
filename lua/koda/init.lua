@@ -1,6 +1,6 @@
 local M = {}
 
----@param opts koda.Config|nil User configuration
+---@param opts koda.Config|nil
 function M.setup(opts)
   require("koda.config").setup(opts)
 
@@ -11,8 +11,7 @@ function M.setup(opts)
 end
 
 -- Reload the colorscheme when the background changes
--- HACK: keep track of 'old_bg' and 'new_bg' to prevent
--- the colorscheme reloading twice during startup
+-- HACK: we keep track of 'old_bg' and 'new_bg' to prevent the colorscheme reloading twice during startup
 local old_bg = vim.o.background
 vim.api.nvim_create_autocmd("OptionSet", {
   pattern = "background",

@@ -1,8 +1,6 @@
 local M = {}
 
---- Get plugin highlight groups
----@param c koda.Palette Color palette
----return table<string, table> # Groups table
+---@type koda.HighlightsFn
 function M.get_hl(c)
   -- stylua: ignore
   return {

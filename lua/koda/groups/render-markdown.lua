@@ -2,6 +2,7 @@ local utils = require("koda.utils")
 
 local M = {}
 
+---@type koda.HighlightsFn
 function M.get_hl(c)
   local h1 = utils.blend(c.fg, c.bg, 0.1)
   -- stylua: ignore

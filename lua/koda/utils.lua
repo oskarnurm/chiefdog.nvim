@@ -2,16 +2,16 @@
 --- Licensed under the Apache License, Version 2.0
 
 local M = {}
-
 M.cache = {}
+local uv = vim.uv or vim.loop
 
 -- Get the root of the lua directory
 local root = debug.getinfo(1, "S").source:sub(2)
 root = vim.fn.fnamemodify(root, ":h:h") -- "/path/to/nvim/lua"
 
---- Like 'require', but skips searching Neovim's runtimepath
---- if no module found, using the root path instead
----@param modname string Module name
+--- Like 'require', but skips searching Neovim's runtimepath if no module found
+--- using the root path instead
+---@param modname string
 ---@return table
 function M.smart_require(modname)
   if package.loaded[modname] then
@@ -35,8 +35,8 @@ function M.read(fname)
 end
 
 --- Writes to the given file, erasing all previous data.
----@param fname string File name
----@param data string Data to be written
+---@param fname string
+---@param data string
 function M.write(fname, data)
   vim.fn.mkdir(vim.fn.fnamemodify(fname, ":h"), "p")
   local file = assert(io.open(fname, "w+"))
@@ -45,14 +45,14 @@ function M.write(fname, data)
 end
 
 --- Returns the path to the cache file for a given key
----@param key string Unique key for cache
+---@param key string
 ---@return string
 function M.cache.file(key)
   return vim.fn.stdpath("cache") .. "/koda-" .. key .. ".json"
 end
 
 --- Safely read and decode the cached file from disk
----@param key string Unique key for cache
+---@param key string
 ---@return koda.Cache|nil
 function M.cache.read(key)
   local ok, data = pcall(function()
@@ -62,7 +62,7 @@ function M.cache.read(key)
 end
 
 --- Encodes and writes data to the cached directory
----@param key string Unique key for cache
+---@param key string
 ---@param data koda.Cache
 function M.cache.write(key, data)
   pcall(M.write, M.cache.file(key), vim.json.encode(data))
@@ -71,16 +71,16 @@ end
 --- Deletes Koda's cache files from the system
 function M.cache.clear()
   for _, style in ipairs({ "dark", "light" }) do
-    vim.uv.fs_unlink(M.cache.file(style))
+    uv.fs_unlink(M.cache.file(style))
   end
 end
 
 --- Unpacks the style table into main highlight groups
----@param groups table<string, table>
----@return table
+---@param groups koda.Highlights
+---@return koda.Highlights
 function M.unpack(groups)
   for _, hl in pairs(groups) do
-    if type(hl.style) == "table" then
+    if hl.style and type(hl.style) == "table" then
       for k, v in pairs(hl.style) do
         hl[k] = v
       end
