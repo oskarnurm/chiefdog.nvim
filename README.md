@@ -74,7 +74,10 @@ vim.cmd("colorscheme koda")
 > [!IMPORTANT]
 > Set the configuration **BEFORE** calling `vim.cmd("colorscheme koda")`.
 
-> Because the theme applies the same background for pop-up menus and floating windows to match the rest of the UI, I recommend setting both `winborder` and `pumborder` to _at least_ "single" in Neovim.
+> Because the theme applies the same background for pop-up menus and floating windows, it is recommended to set both winborder and pumborder to _at least_ "single" in Neovim.
+
+<details>
+  <summary>Default options</summary>
   
 ```lua
 require("koda").setup({
@@ -123,6 +126,8 @@ require("koda").setup({
 })
 
 ````
+
+</details>
 
 <details>
   <summary>Override Colors</summary>
