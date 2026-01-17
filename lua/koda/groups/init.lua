@@ -26,7 +26,7 @@ M.plugins = {
 ---@param colors koda.Palette
 ---@param opts koda.Config
 ---@return koda.Highlights
-function M.get(name, colors, opts) -- TODO: rename this functions
+function M.get_highlights(name, colors, opts) -- TODO: rename this functions
   local group = utils.smart_require("koda.groups." .. name)
   return group.get_hl(colors, opts)
 end
@@ -93,7 +93,7 @@ function M.setup(colors, opts)
   if not hl then
     hl = {}
     for group in pairs(groups) do
-      for k, v in pairs(M.get(group, colors, opts)) do
+      for k, v in pairs(M.get_highlights(group, colors, opts)) do
         hl[k] = v
       end
     end
