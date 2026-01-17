@@ -14,17 +14,15 @@
 > Developed on a 14" XDR retina display, your mileage may vary depending on your screen and brightness.
 
 ## Features
-
-- Minimalist design to be easy on the eyes while providing clear semantic distinction.
-- Supports the lates Neovim 0.12 features
-- Optimized Performance Caching
-- Automatically detects and loads highlights only for the plugins you actually use
-- Growing support for modern plugins
+- Supports the latest [Neovim 0.12](https://neovim.io/roadmap/) features.
+- **Minimalist design**: easy on the eyes while providing a clear semantic distinction.
+- **Performance loading:** automatically loads highlights only for the plugins you use. 
+- Growing support for modern plugins.
 
 <details>
   <summary>Supported plugins</summary>
 
-> Please open an issue if you notice any problems, or a plugin you think should have explicit support is missing
+> Please open an issue if you notice any problems, or if a plugin you think should have explicit support is missing.
 
 - [blink.cmp](https://github.com/saghen/blink.cmp)
 - [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)
@@ -77,9 +75,6 @@ vim.cmd("colorscheme koda")
 > Set the configuration **BEFORE** calling `vim.cmd("colorscheme koda")`.
 
 > Because the theme applies the same background for pop-up menus and floating windows to match the rest of the UI, I recommend setting both `winborder` and `pumborder` to _at least_ "single" in Neovim.
-
-<details>
-  <summary>Default Options</summary>
   
 ```lua
 require("koda").setup({
@@ -120,7 +115,7 @@ require("koda").setup({
 
     -- Automatically enable highlights for plugins installed by your plugin manager
     -- Currently only supports `lazy.nvim` and `vim.pack`
-    -- Set to false to install all plugin highlights or if your plugin manager is not supported
+    -- Set to false to install all plugin highlights, or if your plugin manager is not supported
     auto = true,
 
     cache = true, -- cache for better performance
@@ -129,13 +124,11 @@ require("koda").setup({
 
 ````
 
-</details>
-
 <details>
   <summary>Override Colors</summary>
 
 ```lua
--- Override specific palette colors to your liking.
+-- Override specific palette colours to your liking.
 -- Note: The key names (e.g., 'func') must match those found
 -- in Koda's internal palette (see configuration above).
 require("koda").setup({
@@ -150,4 +143,4 @@ require("koda").setup({
 
 ## Language support
 
-I feel like most languages have sensible defaults thanks to Neovim's built-in queries, so I've opted not to add anything language-specific to keep the footprint smaller. Feel free to open an issue.
+Most languages have sensible defaults thanks to Neovim's built-in queries, so I've opted not to add anything language-specific to keep the footprint smaller. Feel free to open an issue.
