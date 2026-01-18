@@ -10,6 +10,7 @@ describe("File integrity:", function()
       local name = vim.fn.fnamemodify(file, ":t:r")
       if name ~= "init" then
         local ok, mod = pcall(require, "koda.groups." .. name)
+
         assert.is_true(ok, "Failed to load file: " .. name)
         assert.is_table(mod, "Module " .. name .. " did not return a table")
       end
@@ -22,7 +23,6 @@ describe("Plugin detection logic:", function()
   local original_api = vim.pack
 
   before_each(function()
-    -- Reset detection mocks
     package.loaded["lazy"] = nil
     package.loaded["lazy.core.config"] = nil
     package.loaded["koda.utils"] = nil
@@ -35,8 +35,18 @@ describe("Plugin detection logic:", function()
     local config = require("koda.config")
     local opts = config.extend({ auto = true })
     local _, loaded = groups.setup(colors, opts)
+
     assert.is_true(loaded["base"])
     assert.is_nil(loaded["gitsigns"])
+  end)
+
+  it("loads all plugins when auto=false", function()
+    local config = require("koda.config")
+    local opts = config.extend({ auto = false })
+    local _, loaded = groups.setup(colors, opts)
+
+    assert.is_true(loaded["telescope"], "Telescope should be laoded")
+    assert.is_true(loaded["blink"], "Blink should be loaded")
   end)
 
   it("respects lazy.nvim detection", function()
@@ -49,6 +59,7 @@ describe("Plugin detection logic:", function()
     local config = require("koda.config")
     local opts = config.extend({ auto = true })
     local _, loaded = groups.setup(colors, opts)
+
     assert.is_true(loaded["telescope"], "Telescope should be loaded")
     assert.is_nil(loaded["blink.cmp"], "Blink should NOT be loaded")
   end)
@@ -73,15 +84,8 @@ describe("Plugin detection logic:", function()
     local config = require("koda.config")
     local opts = config.extend({ auto = true })
     local _, loaded = groups.setup(colors, opts)
+
     assert.is_true(loaded["blink"], "Blink should be loaded via vim.pack")
     assert.is_nil(loaded["telescope"], "Telescope should NOT be loaded (inactive in vim.pack)")
-  end)
-
-  it("loads all plugins when auto=false", function()
-    local config = require("koda.config")
-    local opts = config.extend({ auto = false })
-    local _, loaded = groups.setup(colors, opts)
-    assert.is_true(loaded["telescope"], "Telescope should be laoded")
-    assert.is_true(loaded["blink"], "Blink should be loaded")
   end)
 end)

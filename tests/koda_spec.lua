@@ -10,6 +10,7 @@ describe("Koda Colorscheme", function()
 
   it("should load without errors", function()
     local ok, err = pcall(vim.cmd, "colorscheme koda")
+
     assert.is_true(ok, "Colorscheme failed to load" .. tostring(err))
   end)
 
@@ -21,9 +22,8 @@ describe("Koda Colorscheme", function()
     assert.is_not_nil(hl.bg, "Normal background should not be nil")
   end)
 
-  it("it should generate a cache file", function()
+  it("should generate a cache file", function()
     vim.cmd("colorscheme koda")
-    local utils = require("koda.utils")
     local cache = utils.cache.file(vim.o.background)
     local exists = vim.uv.fs_stat(cache)
 
