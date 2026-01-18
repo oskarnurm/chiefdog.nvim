@@ -3,21 +3,30 @@ on: [push, pull_request]
 
 jobs:
   unit_tests:
-    runs-on: ubuntu-latest
+    name: test (${{ matrix.os }}, ${{ matrix.nvim-version }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false # Keep running other jobs if one fails
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        nvim-version: [stable, nightly]
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Neovim (Stable)
+      - name: Install Neovim (${{ matrix.nvim-version }})
         uses: rhysd/action-setup-vim@v1
         with:
           neovim: true
-          version: stable
+          version: ${{ matrix.nvim-version }}
 
       - name: Install Plenary
+        shell: bash # Ensures the script runs on Windows runners too
         run: |
           mkdir -p pack/vendor/start
           git clone --depth 1 https://github.com/nvim-lua/plenary.nvim pack/vendor/start/plenary.nvim
 
       - name: Run Tests
+        shell: bash
         run: |
           nvim --headless -u tests/init.lua -c "PlenaryBustedDirectory tests/ {minimal_init = 'tests/init.lua'}"

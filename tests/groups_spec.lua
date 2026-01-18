@@ -1,0 +1,66 @@
+local config = require("koda.config")
+local utils = require("koda.utils")
+local groups = require("koda.groups")
+local palette = require("koda.palette.dark")
+
+describe("Plugin Detection Logic", function()
+  local colors = palette
+  local original_api = vim.pack
+
+  before_each(function()
+    -- Reset package.loaded to clear mocks
+    package.loaded["lazy"] = nil
+    package.loaded["lazy.core.config"] = nil
+    vim.pack = original_api
+    utils.cache.clear()
+  end)
+
+  it("loads only base groups when auto=true and no managers present", function()
+    local opts = config.extend({ auto = true, cache = false })
+    local hl = groups.setup(colors, opts)
+
+    assert.is_not_nil(hl.Normal)
+    assert.is_nil(hl.TelescopeNormal)
+  end)
+
+  it("respects lazy.nvim detection", function()
+    package.loaded.lazy = true
+    package.loaded["lazy.core.config"] = {
+      plugins = {
+        ["telescope.nvim"] = { name = "telescope.nvim" },
+        ["gitsigns.nvim"] = { name = "gitsigns.nvim" },
+      },
+    }
+    local opts = config.extend({ auto = true, cache = false })
+    local hl = groups.setup(colors, opts)
+
+    assert.is_not_nil(hl.TelescopeNormal, "Telescope should be detected via lazy.nvim")
+    assert.is_not_nil(hl.GitSignsAdd, "Gitsigns should be detected via lazy.nvim")
+    assert.is_nil(hl.BlinkCmpMenu, "Blink should NOT be loaded")
+  end)
+
+  it("respects vim.pack detection", function()
+    vim.pack = {
+      get = function()
+        return {
+          { active = true, spec = { name = "blink.cmp" } },
+          { active = false, spec = { name = "oil.nvim" } },
+        }
+      end,
+    }
+    local opts = config.extend({ auto = true, cache = false })
+    local hl = groups.setup(colors, opts)
+
+    assert.is_not_nil(hl.BlinkCmpMenu, "Blink should be detected via active vim.pack")
+    assert.is_nil(hl.OilDir, "Oil is inactive in vim.pack, should NOT load")
+  end)
+
+  it("loads all plugins when auto=false", function()
+    local opts = config.extend({ auto = false, cache = false })
+    local hl = groups.setup(colors, opts)
+
+    assert.is_not_nil(hl.TelescopeNormal)
+    assert.is_not_nil(hl.BlinkCmpMenu)
+    assert.is_not_nil(hl.OilDir)
+  end)
+end)

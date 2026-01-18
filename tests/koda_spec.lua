@@ -1,12 +1,11 @@
+local config = require("koda.config")
+local utils = require("koda.utils")
+
 describe("Koda Colorscheme", function()
   before_each(function()
     -- Clear cache and package.loaded before each test to test "cold start" logic
-    for name, _ in pairs(package.loaded) do
-      if name:match("^koda") then
-        package.loaded[name] = nil
-      end
-    end
-    require("koda.utils").cache.clear()
+    config.setup()
+    utils.reload()
   end)
 
   it("should load without errors", function()
@@ -26,7 +25,6 @@ describe("Koda Colorscheme", function()
     vim.cmd("colorscheme koda")
     local utils = require("koda.utils")
     local cache = utils.cache.file(vim.o.background)
-
     local exists = vim.uv.fs_stat(cache)
 
     assert.is_truthy(exists, "Cache file was not created at " .. cache)
