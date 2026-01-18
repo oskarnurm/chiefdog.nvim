@@ -1,0 +1,23 @@
+name: tests
+on: [push, pull_request]
+
+jobs:
+  unit_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Neovim (Stable)
+        uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: stable
+
+      - name: Install Plenary
+        run: |
+          mkdir -p pack/vendor/start
+          git clone --depth 1 https://github.com/nvim-lua/plenary.nvim pack/vendor/start/plenary.nvim
+
+      - name: Run Tests
+        run: |
+          nvim --headless -u tests/init.lua -c "PlenaryBustedDirectory tests/ {minimal_init = 'tests/init.lua'}"
