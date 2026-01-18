@@ -1,9 +1,8 @@
 local config = require("koda.config")
 local utils = require("koda.utils")
-local groups = require("koda.groups")
 local palette = require("koda.palette.dark")
 
-describe("Plugin Detection Logic", function()
+describe("Plugin detection logic:", function()
   local colors = palette
   local original_api = vim.pack
 
@@ -31,11 +30,12 @@ describe("Plugin Detection Logic", function()
         ["gitsigns.nvim"] = { name = "gitsigns.nvim" },
       },
     }
+    local groups = require("koda.groups")
     local opts = config.extend({ auto = true, cache = false })
     local hl = groups.setup(colors, opts)
 
-    assert.is_not_nil(hl.TelescopeNormal, "Telescope should be detected via lazy.nvim")
-    assert.is_not_nil(hl.GitSignsAdd, "Gitsigns should be detected via lazy.nvim")
+    assert.is_not_nil(hl.TelescopeNormal, "Telescope SHOULD be detected via lazy.nvim")
+    assert.is_not_nil(hl.GitSignsAdd, "Gitsigns SHOULD be detected via lazy.nvim")
     assert.is_nil(hl.BlinkCmpMenu, "Blink should NOT be loaded")
   end)
 
@@ -48,6 +48,7 @@ describe("Plugin Detection Logic", function()
         }
       end,
     }
+    local groups = require("koda.groups")
     local opts = config.extend({ auto = true, cache = false })
     local hl = groups.setup(colors, opts)
 
@@ -56,6 +57,7 @@ describe("Plugin Detection Logic", function()
   end)
 
   it("loads all plugins when auto=false", function()
+    local groups = require("koda.groups")
     local opts = config.extend({ auto = false, cache = false })
     local hl = groups.setup(colors, opts)
 
