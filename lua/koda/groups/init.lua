@@ -60,8 +60,15 @@ function M.setup(colors, opts)
       end
     end
     -- vim.pack
-    local ok, packdata = pcall(vim.pack.get)
-    if ok and packdata then
+    local packdata
+    if vim.pack then
+      local ok, data = pcall(vim.pack.get)
+      if ok then
+        packdata = data
+      end
+    end
+
+    if packdata then
       for _, plugin in ipairs(packdata) do
         if plugin.active and M.plugins[plugin.spec.name] then
           groups[M.plugins[plugin.spec.name]] = true
