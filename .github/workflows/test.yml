@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false # Keep running other jobs if one fails
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest] # TODO: add windows
         nvim-version: [stable, nightly]
 
     steps:
@@ -21,7 +21,7 @@ jobs:
           version: ${{ matrix.nvim-version }}
 
       - name: Install Plenary
-        shell: bash # Ensures the script runs on Windows runners too
+        shell: bash
         run: |
           mkdir -p pack/vendor/start
           git clone --depth 1 https://github.com/nvim-lua/plenary.nvim pack/vendor/start/plenary.nvim
