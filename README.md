@@ -4,7 +4,6 @@
   <p>A minimalist theme for Neovim, written in Lua</p>
 </div>
 
-
 ![Dark Mode](https://github.com/user-attachments/assets/e892c373-ebc2-436d-8efa-7d1fd3d1f1a7)
 ![Light Mode](https://github.com/user-attachments/assets/02a71d9a-3067-4bce-a535-afebb1e190dc)
 
@@ -12,9 +11,10 @@
 > Developed on a 14" XDR retina display, your mileage may vary depending on your screen and brightness.
 
 ## Features
+
 - Supports the latest [Neovim 0.12](https://neovim.io/roadmap/) features.
 - **Minimalist design**: easy on the eyes while providing a clear semantic distinction.
-- **Performance loading:** automatically loads highlights only for the plugins you use. 
+- **Performance loading:** automatically loads highlights only for the plugins you use.
 - Growing support for modern plugins.
 
 <details>
@@ -116,8 +116,8 @@ require("koda").setup({
 
     -- Automatically enable highlights for plugins installed by your plugin manager
     -- Currently only supports `lazy.nvim` and `vim.pack`
-    -- Set to false to install all plugin highlights, or if your plugin manager is not supported
-    auto = true,
+    -- Defaults to false because it can introduce breaking changes
+    auto = false,
 
     cache = true, -- cache for better performance
 
