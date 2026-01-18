@@ -70,7 +70,6 @@ describe("Plugin detection logic:", function()
         }
       end,
     }
-    local groups = require("koda.groups")
     local config = require("koda.config")
     local opts = config.extend({ auto = true })
     local _, loaded = groups.setup(colors, opts)
