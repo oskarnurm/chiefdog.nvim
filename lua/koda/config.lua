@@ -11,7 +11,7 @@ M.defaults = {
     constants = {},
   },
   colors = {},
-  auto = true,
+  auto = false,
   cache = true,
 }
 
