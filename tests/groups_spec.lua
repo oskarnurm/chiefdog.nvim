@@ -9,6 +9,9 @@ describe("Plugin Detection Logic", function()
 
   before_each(function()
     -- Reset package.loaded to clear mocks
+    package.loaded["koda.groups"] = nil
+    package.loaded["koda.config"] = nil
+    package.loaded["koda.utils"] = nil
     package.loaded["lazy"] = nil
     package.loaded["lazy.core.config"] = nil
     vim.pack = original_api
