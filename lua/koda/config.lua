@@ -16,7 +16,7 @@ M.defaults = {
 }
 
 ---@type koda.Config
-M.options = vim.deepcopy(M.defaults)
+M.options = vim.deepcopy(M.defaults) -- NOTE: do we need this still?
 
 ---@param opts koda.Config|nil
 ---@return koda.Config

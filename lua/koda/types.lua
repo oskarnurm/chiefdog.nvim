@@ -18,7 +18,7 @@
 --- Color palette with semantic color names
 ---@field bg string?
 ---@field fg string?
----@field dim string?
+---@field pure string?
 ---@field line string?
 ---@field keyword string?
 ---@field comment string?

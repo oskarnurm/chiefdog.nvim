@@ -3,7 +3,7 @@
 local palette = {
   bg          = "#faf9f5",
   fg          = "#101010",
-  dim         = "#f0eee6",
+  pure        = "#ffffff",
   line        = "#ebebeb",
   keyword     = "#3d3d3d",
   comment     = "#969ba5",
