@@ -1,6 +1,6 @@
 local utils = require("koda.utils")
 local palette = require("koda.palette.dark")
-local groups = require("koda.groups")
+local Groups = require("koda.groups")
 
 describe("Plugin detection logic:", function()
   local colors = palette
@@ -20,7 +20,7 @@ describe("Plugin detection logic:", function()
     local config = require("koda.config")
     local opts = config.extend({ auto = true })
 
-    local _, groups = groups.setup(colors, opts)
+    local _, groups = Groups.setup(colors, opts)
     assert.is_true(groups["base"])
     assert.is_nil(groups["gitsigns"])
   end)
@@ -35,7 +35,7 @@ describe("Plugin detection logic:", function()
 
     local config = require("koda.config")
     local opts = config.extend({ auto = true })
-    local _, groups = groups.setup(colors, opts)
+    local _, groups = Groups.setup(colors, opts)
 
     assert.is_true(groups["telescope"], "Telescope should be in the loaded list")
     assert.is_nil(groups["blink.cmp"], "Blink should not be loaded")
@@ -44,9 +44,9 @@ describe("Plugin detection logic:", function()
   it("loads all plugins when auto=false", function()
     local config = require("koda.config")
     local opts = config.extend({ auto = false })
-    local _, groups = groups.setup(colors, opts)
+    local _, groups = Groups.setup(colors, opts)
 
-    assert.is_true(groups["telescope"])
-    assert.is_true(groups["blink.cmp"])
+    assert.is_true(groups["telescope"], "Telescope should be laoded")
+    assert.is_true(groups["blink.cmp"], "Blink should be loaded")
   end)
 end)
