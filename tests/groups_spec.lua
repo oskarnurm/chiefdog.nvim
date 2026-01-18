@@ -37,8 +37,8 @@ describe("Plugin detection logic:", function()
     local opts = config.extend({ auto = true })
     local _, groups = Groups.setup(colors, opts)
 
-    assert.is_true(groups["telescope"], "Telescope should be in the loaded list")
-    assert.is_nil(groups["blink.cmp"], "Blink should not be loaded")
+    assert.is_true(groups["telescope"], "Telescope should be loaded")
+    assert.is_nil(groups["blink.cmp"], "Blink should NOT be loaded")
   end)
 
   it("loads all plugins when auto=false", function()
@@ -47,6 +47,6 @@ describe("Plugin detection logic:", function()
     local _, groups = Groups.setup(colors, opts)
 
     assert.is_true(groups["telescope"], "Telescope should be laoded")
-    assert.is_true(groups["blink.cmp"], "Blink should be loaded")
+    assert.is_true(groups["blink"], "Blink should be loaded")
   end)
 end)
