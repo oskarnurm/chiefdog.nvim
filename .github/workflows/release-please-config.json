@@ -1,0 +1,10 @@
+{
+  "pull-request-header": "Release ${version}",
+  "pull-request-footer": "",
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "package-name": "koda.nvim"
+    }
+  }
+}
