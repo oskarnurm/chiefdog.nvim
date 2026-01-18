@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.3.1](https://github.com/oskarnurm/koda.nvim/compare/v2.3.0...v2.3.1) (2026-01-18)
+
+
+### Bug Fixes
+
+* guard vim.pack access on Neovim stable ([71a4080](https://github.com/oskarnurm/koda.nvim/commit/71a4080d18935b6e6d628874985f26da184ac382))
+* guard vim.pack access to prevent crash on Neovim stable ([e737817](https://github.com/oskarnurm/koda.nvim/commit/e737817adaeb4045f8712d6f1720066b402f28f7))
+
 ## [2.3.0](https://github.com/oskarnurm/koda.nvim/compare/v2.2.0...v2.3.0) (2026-01-17)
 
 
