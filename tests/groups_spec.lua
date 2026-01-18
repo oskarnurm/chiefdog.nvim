@@ -53,6 +53,31 @@ describe("Plugin detection logic:", function()
     assert.is_nil(groups["blink.cmp"], "Blink should NOT be loaded")
   end)
 
+  it("respects vim.pack detection", function()
+    package.loaded["lazy"] = nil
+    package.loaded["lazy.core.config"] = nil
+    vim.pack = {
+      get = function()
+        return {
+          {
+            active = true,
+            spec = { name = "blink.cmp" },
+          },
+          {
+            active = false,
+            spec = { name = "telescope.nvim" },
+          },
+        }
+      end,
+    }
+    local groups = require("koda.groups")
+    local config = require("koda.config")
+    local opts = config.extend({ auto = true })
+    local _, loaded = groups.setup(colors, opts)
+    assert.is_true(loaded["blink"], "Blink should be loaded via vim.pack")
+    assert.is_nil(loaded["telescope"], "Telescope should NOT be loaded (inactive in vim.pack)")
+  end)
+
   it("loads all plugins when auto=false", function()
     local config = require("koda.config")
     local opts = config.extend({ auto = false })
