@@ -104,7 +104,7 @@ function M.setup(colors, opts)
     end
   end
 
-  return hl
+  return hl, groups
 end
 
 return M
