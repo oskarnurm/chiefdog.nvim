@@ -96,22 +96,22 @@ require("koda").setup({
     -- These will be merged into the active palette (Dark or Light)
     -- Example colors for dark background:
     colors = {
-        bg        = "#101010", -- editor background
-        fg        = "#b0b0b0", -- primary text color
-        dim       = "#50585d", -- line numbers, inlay hints
-        line      = "#272727", -- line highlights
-        keyword   = "#777777", -- language syntax
-        comment   = "#50585d", -- code comments
-        border    = "#ffffff", -- floating window borders
-        emphasis  = "#ffffff", -- bold text and prominent UI elements
-        func      = "#ffffff", -- function names and headings
-        string    = "#ffffff", -- string literals
-        const     = "#d9ba73", -- numbers, booleans, and constants
-        highlight = "#0058d0", -- search results and selection base
-        info      = "#8ebeec", -- diagnostic hints and informative icons
-        success   = "#86cd82", -- added git lines and positive diagnostics
-        warning   = "#d9ba73", -- modified git lines and warning diagnostics
-        danger    = "#ff7676", -- removed git lines and error diagnostics
+        bg        = "#101010",
+        fg        = "#b0b0b0",
+        pure      = "#000000",
+        line      = "#272727",
+        keyword   = "#777777",
+        comment   = "#50585d",
+        border    = "#ffffff",
+        emphasis  = "#ffffff",
+        func      = "#ffffff",
+        string    = "#ffffff",
+        const     = "#d9ba73",
+        highlight = "#0058d0",
+        info      = "#8ebeec",
+        success   = "#86cd82",
+        warning   = "#d9ba73",
+        danger    = "#ff7676",
     },
 
     -- Automatically enable highlights for plugins installed by your plugin manager
