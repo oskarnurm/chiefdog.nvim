@@ -1,4 +1,3 @@
-local config = require("koda.config")
 local utils = require("koda.utils")
 local palette = require("koda.palette.dark")
 
@@ -12,10 +11,16 @@ describe("Plugin detection logic:", function()
     package.loaded["lazy"] = nil
     package.loaded["lazy.core.config"] = nil
     vim.pack = original_api
-    utils.cache.clear()
+
+    for name, _ in pairs(package.loaded) do
+      if name:match("^koda") then
+        package.loaded[name] = nil
+      end
+    end
   end)
 
   it("loads only base groups when auto=true and no managers present", function()
+    local config = require("koda.config")
     local groups = require("koda.groups")
     local opts = config.extend({ auto = true, cache = false })
     local hl = groups.setup(colors, opts)
@@ -32,6 +37,7 @@ describe("Plugin detection logic:", function()
         ["gitsigns.nvim"] = { name = "gitsigns.nvim" },
       },
     }
+    local config = require("koda.config")
     local groups = require("koda.groups")
     local opts = config.extend({ auto = true, cache = false })
     local hl = groups.setup(colors, opts)
@@ -50,6 +56,7 @@ describe("Plugin detection logic:", function()
         }
       end,
     }
+    local config = require("koda.config")
     local groups = require("koda.groups")
     local opts = config.extend({ auto = true, cache = false })
     local hl = groups.setup(colors, opts)
@@ -59,6 +66,7 @@ describe("Plugin detection logic:", function()
   end)
 
   it("loads all plugins when auto=false", function()
+    local config = require("koda.config")
     local groups = require("koda.groups")
     local opts = config.extend({ auto = false, cache = false })
     local hl = groups.setup(colors, opts)
