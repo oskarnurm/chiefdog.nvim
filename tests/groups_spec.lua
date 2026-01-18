@@ -7,7 +7,8 @@ describe("Plugin detection logic:", function()
   local original_api = vim.pack
 
   before_each(function()
-    -- Reset package.loaded to clear mocks
+    -- Reset modules
+    package.loaded["koda.groups"] = nil
     package.loaded["lazy"] = nil
     package.loaded["lazy.core.config"] = nil
     vim.pack = original_api
@@ -15,6 +16,7 @@ describe("Plugin detection logic:", function()
   end)
 
   it("loads only base groups when auto=true and no managers present", function()
+    local groups = require("koda.groups")
     local opts = config.extend({ auto = true, cache = false })
     local hl = groups.setup(colors, opts)
 
