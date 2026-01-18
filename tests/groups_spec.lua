@@ -9,9 +9,6 @@ describe("Plugin Detection Logic", function()
 
   before_each(function()
     -- Reset package.loaded to clear mocks
-    package.loaded["koda.groups"] = nil
-    package.loaded["koda.config"] = nil
-    package.loaded["koda.utils"] = nil
     package.loaded["lazy"] = nil
     package.loaded["lazy.core.config"] = nil
     vim.pack = original_api
@@ -23,7 +20,7 @@ describe("Plugin Detection Logic", function()
     local hl = groups.setup(colors, opts)
 
     assert.is_not_nil(hl.Normal)
-    assert.is_nil(hl.TelescopeNormal)
+    assert.is_nil(hl.GitSignsAdd)
   end)
 
   it("respects lazy.nvim detection", function()
