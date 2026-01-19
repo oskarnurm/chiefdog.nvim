@@ -5,8 +5,15 @@ function M.get_hl(c)
   -- stylua: ignore
   return {
     -- Picker
+    -- TODO: check if these highlights work on remote
+    SnacksPicker               = { bg = c.bg },
+    SnacksPickerList           = { bg = c.bg },
     SnacksPickerDir            = { fg = c.keyword },
     SnacksPickerMatch          = { fg = c.const },
+    SnacksPickerBorder         = { bg = c.bg },
+    SnacksPickerPreview        = { bg = c.bg },
+    SnacksPickerPreviewBorder  = { bg = c.bg },
+    SnacksPickerInputBorder    = { bg = c.bg },
     -- Notifier
     SnacksNotifierIconDebug    = { fg = c.comment },
     SnacksNotifierTitleDebug   = { fg = c.comment },
