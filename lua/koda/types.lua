@@ -40,4 +40,4 @@
 ---@field styles? table<string, vim.api.keyset.highlight>
 ---@field colors? table<string, string>
 ---@field auto? boolean
----@field on_highlights? fun(highlights: koda.Highlights, colors: koda.Palette) -- TODO: implement this someday
+---@field on_highlights? fun(highlights: koda.Highlights, colors: koda.Palette)

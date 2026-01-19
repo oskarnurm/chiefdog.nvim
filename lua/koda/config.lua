@@ -13,10 +13,12 @@ M.defaults = {
   colors = {},
   auto = false,
   cache = true,
+
+  on_highlights = function(highlights, colors) end,
 }
 
 ---@type koda.Config
-M.options = vim.deepcopy(M.defaults) -- so we can omit calling setup()
+M.options = vim.deepcopy(M.defaults) -- using this we can omit calling setup()
 
 ---@param opts koda.Config|nil
 ---@return koda.Config

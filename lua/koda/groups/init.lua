@@ -103,6 +103,7 @@ function M.setup(colors, opts)
       utils.cache.write(cache_key, { groups = hl, config = config })
     end
   end
+  opts.on_highlights(hl, colors)
 
   return hl, groups
 end

@@ -79,7 +79,7 @@ vim.cmd("colorscheme koda")
   
 ```lua
 require("koda").setup({
-    transparent = false,  -- enable for transparent backgrounds
+    transparent = false, -- enable for transparent backgrounds
 
     -- Style to be applied to different syntax groups.
     -- Common use case would be to set either `italic = true` or `bold = true` for a desired group.
@@ -94,24 +94,24 @@ require("koda").setup({
 
     -- Override colors
     -- These will be merged into the active palette (Dark or Light)
-    -- Example colors for dark background:
+    -- Example default palette for dark background:
     colors = {
-        bg        = "#101010", -- editor background
-        fg        = "#b0b0b0", -- primary text color
-        dim       = "#50585d", -- markdown codeblock
-        line      = "#272727", -- line highlights
-        keyword   = "#777777", -- language syntax
-        comment   = "#50585d", -- code comments
-        border    = "#ffffff", -- floating window borders
-        emphasis  = "#ffffff", -- bold text and prominent UI elements
-        func      = "#ffffff", -- function names and headings
-        string    = "#ffffff", -- string literals
-        const     = "#d9ba73", -- numbers, booleans, and constants
-        highlight = "#0058d0", -- search results and selection base
-        info      = "#8ebeec", -- diagnostic hints and informative icons
-        success   = "#86cd82", -- added git lines and positive diagnostics
-        warning   = "#d9ba73", -- modified git lines and warning diagnostics
-        danger    = "#ff7676", -- removed git lines and error diagnostics
+        bg        = "#101010",
+        fg        = "#b0b0b0",
+        dim       = "#50585d",
+        line      = "#272727",
+        keyword   = "#777777",
+        comment   = "#50585d",
+        border    = "#ffffff",
+        emphasis  = "#ffffff",
+        func      = "#ffffff",
+        string    = "#ffffff",
+        const     = "#d9ba73",
+        highlight = "#0058d0",
+        info      = "#8ebeec",
+        success   = "#86cd82",
+        warning   = "#d9ba73",
+        danger    = "#ff7676",
     },
 
     -- Automatically enable highlights for plugins installed by your plugin manager
@@ -121,6 +121,9 @@ require("koda").setup({
 
     cache = true, -- cache for better performance
 
+    -- Override highlights or add new highlights
+    on_highlights = function(highlights, colors) end,
+
 })
 
 ````
@@ -128,17 +131,25 @@ require("koda").setup({
 </details>
 
 <details>
-  <summary>Override Colors</summary>
+  <summary>Override Colors & Highlights</summary>
 
 ```lua
--- Override specific palette colours to your liking.
+-- Override specific palette colors or highlights to your liking.
 -- Note: The key names (e.g., 'func') must match those found
 -- in Koda's internal palette (see configuration above).
 require("koda").setup({
   colors = {
-    func = "#4078F2",    -- changes the color of functions
+    func = "#4078F2", -- changes the color of functions
     keyword = "#A627A4", -- changes the color of keywords
   },
+
+  -- You can modify or extend highlight groups using the `on_highlights` configuration option.
+  -- Any changes made take effect when highlights are applied.
+  on_highlights = function(hl, c)
+    hl.LineNr = { fg = c.info } -- change a specific highlight to use a different palette color
+    hl.Comment = { fg = c.emphasis, italic = true } -- modify a syntax group (add bold, italic, etc)
+    hl.RainbowDelimiterRed = { fg = "#fb2b2b" } -- add a custom highlight group for another plugin
+  end,
 })
 ````
 
