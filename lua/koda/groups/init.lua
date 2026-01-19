@@ -7,18 +7,19 @@ local M = {}
 
 -- stylua: ignore
 M.plugins = {
-  ["blink.cmp"]             = "blink",
-  ["mini.nvim"]             = "mini",
-  ["modes.nvim"]            = "modes",
-  ["oil.nvim"]              = "oil",
-  ["dashboard-nvim"]        = "dashboard",
-  ["flash.nvim"]            = "flash",
-  ["fzf-lua"]               = "fzf",
-  ["gitsigns.nvim"]         = "gitsigns",
-  ["render-markdown.nvim"]  = "render-markdown",
-  ["snacks.nvim"]           = "snacks",
-  ["telescope.nvim"]        = "telescope",
-  ["trouble.nvim"]          = "trouble",
+  ["blink.cmp"]                = "blink",
+  ["rainbow-delimiters.nvim"]  = "rainbow-delimiters",
+  ["mini.nvim"]                = "mini",
+  ["modes.nvim"]               = "modes",
+  ["oil.nvim"]                 = "oil",
+  ["dashboard-nvim"]           = "dashboard",
+  ["flash.nvim"]               = "flash",
+  ["fzf-lua"]                  = "fzf",
+  ["gitsigns.nvim"]            = "gitsigns",
+  ["render-markdown.nvim"]     = "render-markdown",
+  ["snacks.nvim"]              = "snacks",
+  ["telescope.nvim"]           = "telescope",
+  ["trouble.nvim"]             = "trouble",
 }
 
 --- Gets highlights from a specific group
