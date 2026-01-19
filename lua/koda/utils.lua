@@ -127,6 +127,7 @@ function M.reload()
       package.loaded[name] = nil
     end
   end
+  vim.notify("Koda reloaded", vim.log.levels.WARN)
   vim.cmd("colorscheme koda")
 end
 
