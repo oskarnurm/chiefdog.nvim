@@ -8,6 +8,7 @@ local M = {}
 -- stylua: ignore
 M.plugins = {
   ["blink.cmp"]                = "blink",
+  ["mason.nvim"]               = "mason",
   ["rainbow-delimiters.nvim"]  = "rainbow-delimiters",
   ["mini.nvim"]                = "mini",
   ["modes.nvim"]               = "modes",
