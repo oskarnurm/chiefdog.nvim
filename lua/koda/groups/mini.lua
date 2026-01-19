@@ -6,15 +6,15 @@ function M.get_hl(c)
   return {
     MiniPickMatchRanges       = { fg = c.const },
     MiniStatuslineModeNormal  = { fg = c.bg, bg = c.fg },
-    MiniIconsGrey             = { fg = c.emphasis },
-    MiniIconsPurple           = { fg = c.emphasis },
-    MiniIconsBlue             = { fg = c.emphasis },
-    MiniIconsAzure            = { fg = c.emphasis },
-    MiniIconsCyan             = { fg = c.emphasis },
-    MiniIconsGreen            = { fg = c.emphasis },
-    MiniIconsYellow           = { fg = c.emphasis },
-    MiniIconsOrange           = { fg = c.emphasis },
-    MiniIconsRed              = { fg = c.emphasis },
+    MiniIconsGrey             = { fg = c.fg },
+    MiniIconsAzure            = { fg = c.info },
+    MiniIconsBlue             = { fg = c.highlight },
+    MiniIconsCyan             = { fg = c.info },
+    MiniIconsGreen            = { fg = c.green },
+    MiniIconsOrange           = { fg = c.highlight },
+    MiniIconsPurple           = { fg = c.orange },
+    MiniIconsRed              = { fg = c.red },
+    MiniIconsYellow           = { fg = c.yellow },
   }
 end
 

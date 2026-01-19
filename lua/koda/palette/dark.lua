@@ -17,6 +17,10 @@ local palette = {
   success     = "#86cd82",
   warning     = "#d9ba73",
   danger      = "#ff7676",
+  green       = "#14ba19",
+  orange      = "#f54d27",
+  red         = "#701516",
+  yellow      = "#d0bf41",
 }
 
 return palette
