@@ -32,6 +32,12 @@
 ---@field success string?
 ---@field warning string?
 ---@field danger string?
+---@field green string?
+---@field orange string?
+---@field red string?
+---@field yellow string?
+---@field pink string?
+---@field cyan string?
 
 ---@class koda.Config
 --- User configuration options for the theme
