@@ -1,10 +1,10 @@
 local M = {}
 
 ---@type koda.HighlightsFn
-function M.get_hl(c)
+function M.get_hl(c, opts)
   -- stylua: ignore
   return {
-    FzfLuaNormal = { fg = c.fg, bg = c.bg },
+    FzfLuaBackdrop = { bg = opts.transparent and "none" or c.bg },
   }
 end
 
