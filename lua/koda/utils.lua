@@ -18,7 +18,7 @@ end
 ---@param fname string
 ---@param data string
 function M.write(fname, data)
-  vim.fn.mkdir(vim.fn.fnamemodify(fname, ":h"), "p")
+  vim.fn.mkdir(vim.fs.dirname(fname), "p")
   local file = assert(io.open(fname, "w+"))
   file:write(data)
   file:close()
@@ -35,10 +35,12 @@ end
 ---@param key string
 ---@return koda.Cache|nil
 function M.cache.read(key)
-  local ok, data = pcall(function()
-    return vim.json.decode(M.read(M.cache.file(key)), { luanil = { object = true, array = true } })
-  end)
-  return ok and data or nil
+  local ok, data = pcall(M.read, M.cache.file(key))
+  if not ok then
+    return nil
+  end
+  local is_ok, ret = pcall(vim.json.decode, data, { luanil = { object = true, array = true } })
+  return is_ok and ret or nil
 end
 
 --- Encodes and writes data to the cached directory
