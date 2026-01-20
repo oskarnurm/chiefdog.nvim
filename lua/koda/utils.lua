@@ -28,7 +28,7 @@ end
 ---@param key string
 ---@return string
 function M.cache.file(key)
-  return vim.fn.stdpath("cache") .. "/koda-" .. key .. ".json"
+  return vim.fs.joinpath(vim.fn.stdpath("cache"), "koda-" .. key .. ".json")
 end
 
 --- Safely read and decode the cached file from disk
