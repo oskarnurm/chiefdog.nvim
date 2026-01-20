@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.4.1](https://github.com/oskarnurm/koda.nvim/compare/v2.4.0...v2.4.1) (2026-01-20)
+
+
+### Bug Fixes
+
+* **base:** update visual selection colors ([#49](https://github.com/oskarnurm/koda.nvim/issues/49)) ([8a3b879](https://github.com/oskarnurm/koda.nvim/commit/8a3b879c528d3b78e90ebe6b4502a2ea7fb0c768))
+* **types:** add missing annotations for new colors in the palette ([#51](https://github.com/oskarnurm/koda.nvim/issues/51)) ([52e6220](https://github.com/oskarnurm/koda.nvim/commit/52e6220a8c2a5913bf5db3444f1ec8bcbd908530))
+
 ## [2.4.0](https://github.com/oskarnurm/koda.nvim/compare/v2.3.0...v2.4.0) (2026-01-20)
 
 
