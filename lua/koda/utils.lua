@@ -3,7 +3,6 @@
 
 local M = {}
 M.cache = {}
-local uv = vim.uv or vim.loop -- TODO: don't support vim.loop
 
 --- Reads the given file and returns its contents
 ---@param fname string
@@ -52,7 +51,7 @@ end
 --- Deletes Koda's cache files from the system
 function M.cache.clear()
   for _, style in ipairs({ "dark", "light" }) do
-    uv.fs_unlink(M.cache.file(style))
+    vim.uv.fs_unlink(M.cache.file(style))
   end
 end
 
