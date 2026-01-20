@@ -1,6 +1,3 @@
---- Parts of this file are adapted from: https://github.com/folke/tokyonight.nvim
---- Licensed under the Apache License, Version 2.0
-
 local utils = require("koda.utils")
 
 local M = {}
