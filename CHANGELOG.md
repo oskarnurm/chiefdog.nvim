@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.2](https://github.com/oskarnurm/koda.nvim/compare/v2.4.1...v2.4.2) (2026-01-21)
+
+
+### Bug Fixes
+
+* **base:** update CurSearch and Substitute hl-group colors ([2731f09](https://github.com/oskarnurm/koda.nvim/commit/2731f09df8ee6e4006f7bec15ffd1b20a6b7f378))
+
 ## [2.4.1](https://github.com/oskarnurm/koda.nvim/compare/v2.4.0...v2.4.1) (2026-01-20)
 
 
