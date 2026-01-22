@@ -80,10 +80,10 @@ vim.cmd("colorscheme koda")
 require("koda").setup({
     transparent = false, -- enable for transparent backgrounds
 
-    -- Automatically enable highlights for plugins installed by your plugin manager
+    -- Automatically enable highlights only for plugins installed by your plugin manager
     -- Currently only supports `lazy.nvim` and `vim.pack`
-    -- Default set to `false` because vim.pack can introduce breaking changes
-    auto = false,
+    -- Disable this to load ALL available plugin highlights
+    auto = true,
 
     cache = true, -- cache for better performance
 
@@ -129,6 +129,7 @@ require("koda").setup({
     -- You can modify or extend highlight groups using the `on_highlights` configuration option
     -- Any changes made take effect when highlights are applied
     on_highlights = function(hl, c) end,
+
 })
 
 ````

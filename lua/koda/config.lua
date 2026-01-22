@@ -11,7 +11,7 @@ M.defaults = {
     constants = {},
   },
   colors = {},
-  auto = false,
+  auto = true,
   cache = true,
 
   on_highlights = function(highlights, colors) end,
