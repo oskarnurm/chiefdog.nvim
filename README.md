@@ -10,6 +10,8 @@
 > [!NOTE]
 > Developed on a 14" XDR retina display, your mileage may vary depending on your screen and brightness.
 
+## Hello world
+
 ## Features
 
 - **Minimalist design**: easy on the eyes while providing a clear semantic distinction.
@@ -129,6 +131,7 @@ require("koda").setup({
     -- You can modify or extend highlight groups using the `on_highlights` configuration option
     -- Any changes made take effect when highlights are applied
     on_highlights = function(hl, c) end,
+
 })
 
 ````
