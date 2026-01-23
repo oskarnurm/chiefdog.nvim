@@ -15,6 +15,7 @@ function M.get_hl(c)
     ["@lsp.typemod.class.declaration"] = { link = "Function" },
     ["@lsp.typemod.class.constructor"] = { link = "Function" },
     ["@lsp.typemod.class.abstract"] = { link = "Function" },
+    ["@lsp.type.namespace"] = { link = "Normal" },
   }
 end
 
