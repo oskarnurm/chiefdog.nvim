@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.5.0](https://github.com/oskarnurm/koda.nvim/compare/v2.4.2...v2.5.0) (2026-01-23)
+
+
+### Features
+
+* enable plugin detection by default ([#53](https://github.com/oskarnurm/koda.nvim/issues/53)) ([966df52](https://github.com/oskarnurm/koda.nvim/commit/966df525e4580ce843eea3923b44d4f12cf884a6))
+
+
+### Bug Fixes
+
+* **hl:** link `typemod.class.declaration` to `Function` hl-group ([43c6e99](https://github.com/oskarnurm/koda.nvim/commit/43c6e999c9fe1dc4fb4cb00bebd7de97c40acda5))
+
 ## [2.4.2](https://github.com/oskarnurm/koda.nvim/compare/v2.4.1...v2.4.2) (2026-01-21)
 
 
