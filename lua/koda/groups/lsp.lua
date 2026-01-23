@@ -13,6 +13,7 @@ function M.get_hl(c)
     LspInlayHint           = { fg = c.comment },
     ["@lsp.type.comment"]  = {}, -- use treesitter styles
     ["@lsp.typemod.class.declaration"] = { link = "Function" },
+    ["@lsp.typemod.class.constructor"] = { link = "Function" },
   }
 end
 
