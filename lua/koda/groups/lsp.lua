@@ -14,6 +14,7 @@ function M.get_hl(c)
     ["@lsp.type.comment"]  = {}, -- use treesitter styles
     ["@lsp.typemod.class.declaration"] = { link = "Function" },
     ["@lsp.typemod.class.constructor"] = { link = "Function" },
+    ["@lsp.typemod.class.abstract"] = { link = "Function" },
   }
 end
 
