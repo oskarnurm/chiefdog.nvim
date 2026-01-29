@@ -15,6 +15,7 @@ function M.get_hl(c)
     MiniIconsPurple           = { fg = c.orange },
     MiniIconsRed              = { fg = c.red },
     MiniIconsYellow           = { fg = c.yellow },
+    MiniJump2dSpot            = { fg = c.const },
   }
 end
 
