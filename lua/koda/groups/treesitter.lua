@@ -97,6 +97,11 @@ function M.get_hl(c, opts)
     ["@tag.builtin"]                   = { link = "Normal" },
     ["@tag.delimiter"]                 = { link = "Keyword" },
     ["@tag.attribute"]                 = { link = "Keyword" },
+
+    -- rust
+    ["@character.rust"] = { fg=c.success },
+    ["@operator.rust"] = { fg=c.emphasis },
+    ["@string.rust"] = { fg=c.success },
   }
 end
 
