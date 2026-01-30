@@ -32,7 +32,6 @@ function M.get_hl(c)
     ["@lsp.typemod.namespace.rust"] = { fg=c.const },
     ["@lsp.typemod.namespace.library.rust"] = { fg=c.const },
     ["@lsp.typemod.operator.rust"] = { link="@operator.rust" },
-    ["@lsp.typemod.string.macro.rust"] = { fg=c.success },
     ["@lsp.typemod.struct.macro.rust"] = { fg=c.const },
   }
 end

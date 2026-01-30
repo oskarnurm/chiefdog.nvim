@@ -101,7 +101,6 @@ function M.get_hl(c, opts)
     -- rust
     ["@character.rust"] = { fg=c.success },
     ["@operator.rust"] = { fg=c.emphasis },
-    ["@string.rust"] = { fg=c.success },
   }
 end
 
