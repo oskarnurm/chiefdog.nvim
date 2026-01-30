@@ -20,7 +20,7 @@ function M.get_hl(c)
     -- rust
     ["@lsp.type.builtinType.rust"] = { fg=c.keyword },
     ["@lsp.type.enum.rust"] = { fg=c.func },
-    ["@lsp.type.escapeSequence.rust"] = { fg=c.info },
+    ["@lsp.type.escapeSequence.rust"] = { fg=c.fg },
     ["@lsp.type.lifetime.rust"] = { fg=c.pink },
     ["@lsp.type.macro.rust"] = { link="@lsp.typemod.namespace.library.rust" },
     ["@lsp.type.struct.rust"] = { fg=c.func },
@@ -30,7 +30,7 @@ function M.get_hl(c)
     ["@lsp.typemod.keyword.rust"] = { fg=c.fg },
     ["@lsp.typemod.macro.library.rust"] = { fg=c.const},
     ["@lsp.typemod.namespace.rust"] = { fg=c.const },
-    ["@lsp.typemod.namespace.library.rust"] = { fg=c.const },
+    ["@lsp.typemod.namespace.library.rust"] = { fg=c.fg },
     ["@lsp.typemod.operator.rust"] = { link="@operator.rust" },
     ["@lsp.typemod.struct.macro.rust"] = { fg=c.const },
   }
