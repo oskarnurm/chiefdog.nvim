@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.6.0](https://github.com/oskarnurm/koda.nvim/compare/v2.5.0...v2.6.0) (2026-01-31)
+
+
+### Features
+
+* add more semantic highlights ([#58](https://github.com/oskarnurm/koda.nvim/issues/58)) ([9b3d76a](https://github.com/oskarnurm/koda.nvim/commit/9b3d76ad9309562aa862bfce823a8e821d69078f))
+* **base:** change directory color to `emphasis` ([a8948b6](https://github.com/oskarnurm/koda.nvim/commit/a8948b619acf5ad6c6b035c6f70e59f20347571f))
+* **mini:** add color to mini.jump2d ([#59](https://github.com/oskarnurm/koda.nvim/issues/59)) ([f1c4e7f](https://github.com/oskarnurm/koda.nvim/commit/f1c4e7f8ca65048cd62dbd0443eb95f749576c80))
+* **palette:** change hue on orange color a tiny bit ([41111cd](https://github.com/oskarnurm/koda.nvim/commit/41111cd0dfa6d6765d1a1a1024eaf1a9c0e05abb))
+* **palette:** remove yellow color ([fae026c](https://github.com/oskarnurm/koda.nvim/commit/fae026c8b5e44991940537201b40b2028b6829d1))
+* **plugins:** add `strikethrough` attribute to NeoTreeGitDeleted ([d55e616](https://github.com/oskarnurm/koda.nvim/commit/d55e616819a86c6ed2a3ff0066419bcc90f08391))
+* **plugins:** add support for Neo-tree.nvim ([d7c6f51](https://github.com/oskarnurm/koda.nvim/commit/d7c6f512c00a265abd91e3f32ae0b8be781374a2))
+* **plugins:** update mini.icon colors to match new palette ([d16f436](https://github.com/oskarnurm/koda.nvim/commit/d16f436991eee6aaaa96522e24a319cdf0f11746))
+
 ## [2.5.0](https://github.com/oskarnurm/koda.nvim/compare/v2.4.2...v2.5.0) (2026-01-23)
 
 
