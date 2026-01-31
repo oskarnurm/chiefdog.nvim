@@ -31,6 +31,7 @@
 - [mini.pick](https://github.com/nvim-mini/mini.pick)
 - [mini.statusline](https://github.com/nvim-mini/mini.statusline)
 - [mini.icons](https://github.com/nvim-mini/mini.icons?tab=readme-ov-file)
+- [mini.jump2d](https://github.com/nvim-mini/mini.jump2d)
 - [modes.nvim](https://github.com/mvllow/modes.nvim)
 - [oil.nvim](https://github.com/stevearc/oil.nvim)
 - [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim)
