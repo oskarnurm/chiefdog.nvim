@@ -24,6 +24,15 @@ function M.get_palette()
   return palette
 end
 
+--- Blends two colors based on alpha transparency
+---@param foreground string Foreground hex color
+---@param background string Background hex color
+---@param alpha number Blend factor (0 to 1)
+---@return string # A hex color string like "#RRGGBB"
+function M.blend(foreground, background, alpha)
+  return require("koda.utils").blend(foreground, background, alpha)
+end
+
 -- TODO: look into a better solution
 -- Reload the colorscheme when the background changes
 -- HACK: we keep track of 'old_bg' and 'new_bg' to prevent the colorscheme reloading twice during startup
