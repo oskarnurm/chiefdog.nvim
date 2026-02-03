@@ -10,6 +10,20 @@ function M.setup(opts)
   end, {})
 end
 
+--- Get the current palette with any user overrides applied
+---@return koda.Palette
+function M.get_palette()
+  local config = require("koda.config")
+  local palette = require("koda.palette." .. vim.o.background)
+
+  -- Apply custom color overrides if they exist
+  if config.options.colors and type(config.options.colors) == "table" then
+    palette = vim.tbl_deep_extend("force", palette, config.options.colors)
+  end
+
+  return palette
+end
+
 -- TODO: look into a better solution
 -- Reload the colorscheme when the background changes
 -- HACK: we keep track of 'old_bg' and 'new_bg' to prevent the colorscheme reloading twice during startup
