@@ -163,6 +163,17 @@ require("koda").setup({
 
 </details>
 
+## API
+
+Koda exposes a few utility functions to allow users to integrate the theme with other parts of your configuration.
+
+```lua
+local koda = require("koda")
+local colors = koda.get_palette() -- returns the active palette (dark or light) with any of your user overrides applied
+
+some_plugin.error= koda.blend(colors.danger, colors.bg, 0.3) -- blends two colors together. Useful for creating custom shades that match the theme
+```
+
 ## Language support
 
 Most languages have sensible defaults thanks to Neovim's built-in queries, so I've opted not to add anything language-specific to keep the footprint smaller. Feel free to open an issue.
