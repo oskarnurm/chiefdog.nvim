@@ -4,8 +4,8 @@
   <p>A minimalist theme for Neovim, written in Lua</p>
 </div>
 
-![Dark Mode](https://github.com/user-attachments/assets/e892c373-ebc2-436d-8efa-7d1fd3d1f1a7)
-![Light Mode](https://github.com/user-attachments/assets/02a71d9a-3067-4bce-a535-afebb1e190dc)
+<img width="1136" height="745" alt="image" src="https://github.com/user-attachments/assets/8e31231c-d40d-44b5-8e29-0be77339fca9" />
+<img width="1136" height="745" alt="image" src="https://github.com/user-attachments/assets/d2018883-036b-4276-913e-b0d638b98972" />
 
 > [!NOTE]
 > Developed on a 14" XDR retina display, your mileage may vary depending on your screen and brightness.
