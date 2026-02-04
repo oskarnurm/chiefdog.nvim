@@ -4,8 +4,8 @@
   <p>A minimalist theme for Neovim, written in Lua</p>
 </div>
 
-![Koda Dark](https://github.com/user-attachments/assets/ed00d09e-92a6-492e-b62c-8052db640ecf)
-![Koda Light](https://github.com/user-attachments/assets/aa4af3e1-6530-4204-a8c9-f18e42e89ae8)
+<img width="1136" height="745" alt="image" src="https://github.com/user-attachments/assets/8e31231c-d40d-44b5-8e29-0be77339fca9" />
+<img width="1136" height="745" alt="image" src="https://github.com/user-attachments/assets/d2018883-036b-4276-913e-b0d638b98972" />
 
 > [!NOTE]
 > Developed on a 14" XDR retina display, your mileage may vary depending on your screen and brightness.
