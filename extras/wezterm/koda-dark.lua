@@ -1,6 +1,6 @@
 return {
   foreground = "#ffffff",
-  background = "#121212",
+  background = "#101010",
 
   cursor_bg = "#b0b0b0",
   cursor_fg = "#101010",
@@ -14,7 +14,7 @@ return {
   scrollbar_thumb = "#b0b0b0",
 
   ansi = {
-    "#121212",
+    "#101010",
     "#ff7676",
     "#a3d6a3",
     "#ffffff",

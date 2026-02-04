@@ -180,4 +180,4 @@ Most languages have sensible defaults thanks to Neovim's built-in queries, so I'
 
 ## Extras
 
-Extra color configs for [WezTerm](extras/wezterm/), can be found in [extras](extras/). To use them, refer to their respective documentation.
+Extra color configs for [WezTerm](extras/wezterm/), [Ghostty](extras/ghostty/) and [Lazygit](extras/lazygit/) can be found in [extras](extras/). To use them, refer to their respective documentation.
