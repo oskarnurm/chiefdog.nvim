@@ -5,34 +5,23 @@ local M = {}
 function M.get_hl(c)
   -- stylua: ignore
   return {
-    DiagnosticOK                        = { fg = c.success },
-    DiagnosticError                     = { fg = c.danger },
-    DiagnosticWarn                      = { fg = c.warning },
-    DiagnosticHint                      = { fg = c.info },
-    DiagnosticInfo                      = { fg = c.fg },
-    LspInlayHint                        = { fg = c.comment },
+    DiagnosticError                     = { fg   = c.danger },
+    DiagnosticHint                      = { fg   = c.info },
+    DiagnosticInfo                      = { fg   = c.fg },
+    DiagnosticOK                        = { fg   = c.success },
+    DiagnosticWarn                      = { fg   = c.warning },
+    LspInlayHint                        = { fg   = c.comment },
     ["@lsp.type.comment"]               = {}, -- use treesitter styles
-    ["@lsp.typemod.class.declaration"]  = { link = "Function" },
-    ["@lsp.typemod.class.constructor"]  = { link = "Function" },
-    ["@lsp.typemod.class.abstract"]     = { link = "Function" },
+    ["@lsp.type.enum"]                  = { link = "Function" },
+    ["@lsp.type.lifetime"]              = { fg   = c.const },
     ["@lsp.type.namespace"]             = { link = "Normal" },
-
-    -- rust
-    ["@lsp.type.builtinType.rust"] = { fg=c.keyword },
-    ["@lsp.type.enum.rust"] = { fg=c.func },
-    ["@lsp.type.escapeSequence.rust"] = { fg=c.fg },
-    ["@lsp.type.lifetime.rust"] = { fg=c.pink },
-    ["@lsp.type.macro.rust"] = { fg=c.const },
-    ["@lsp.type.struct.rust"] = { fg=c.func },
-    ["@lsp.typemod.decorator.rust"] = { fg=c.fg },
-    ["@lsp.typemod.derive.macro.rust"] = { fg=c.const },
-    ["@lsp.typemod.enum.rust"] = { fg=c.func },
-    ["@lsp.typemod.keyword"] = { link="Keyword"},
-    ["@lsp.typemod.macro.library.rust"] = { fg=c.const},
-    ["@lsp.typemod.namespace.rust"] = { fg=c.const },
-    ["@lsp.typemod.namespace.library.rust"] = { fg=c.fg },
-    ["@lsp.typemod.operator.rust"] = { link="@operator.rust" },
-    ["@lsp.typemod.struct.macro.rust"] = { fg=c.const },
+    ["@lsp.type.struct"]                = { link = "Function" },
+    ["@lsp.typemod.class.abstract"]     = { link = "Function" },
+    ["@lsp.typemod.class.constructor"]  = { link = "Function" },
+    ["@lsp.typemod.class.declaration"]  = { link = "Function" },
+    ["@lsp.typemod.derive"]             = { link = "Function" },
+    ["@lsp.typemod.enum.declaration"]   = { link = "Function" },
+    ["@lsp.typemod.struct.declaration"] = { link = "Function" },
   }
 end
 
