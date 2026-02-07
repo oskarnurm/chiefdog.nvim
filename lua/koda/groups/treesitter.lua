@@ -51,7 +51,7 @@ function M.get_hl(c, opts)
     ["@keyword.type"]                  = { link = "Keyword" },
     ["@keyword.modifier"]              = { link = "Keyword" },
     ["@keyword.repeat"]                = { link = "Repeat" },
-    ["@keyword.return"]                = { link = "Keyword"},
+    ["@keyword.return"]                = { fg = c.emphasis },
     ["@keyword.debug"]                 = { link = "Keyword" },
     ["@keyword.exception"]             = { link = "Exception" },
     ["@keyword.conditional"]           = { link = "Conditional" },
