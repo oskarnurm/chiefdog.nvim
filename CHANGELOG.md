@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.7.0](https://github.com/oskarnurm/koda.nvim/compare/v2.6.0...v2.7.0) (2026-02-07)
+
+
+### Features
+
+* add `char` to palette and link it ([#77](https://github.com/oskarnurm/koda.nvim/issues/77)) ([1387d72](https://github.com/oskarnurm/koda.nvim/commit/1387d72494a43171024ee34fd224c6f34e03f6c3))
+* add get_palette() API for accessing colors ([#61](https://github.com/oskarnurm/koda.nvim/issues/61)) ([54b41b1](https://github.com/oskarnurm/koda.nvim/commit/54b41b19a883911efa0ca12dca3b2fdb2bb49e6a))
+* **api:** expose blend function for user configuration ([#64](https://github.com/oskarnurm/koda.nvim/issues/64)) ([a09b004](https://github.com/oskarnurm/koda.nvim/commit/a09b004b576667d3e0c938c0b1de52a287088fc5))
+* **extras:** add fzf dark and light theme ([#74](https://github.com/oskarnurm/koda.nvim/issues/74)) ([22061f3](https://github.com/oskarnurm/koda.nvim/commit/22061f3fe91472addf9017dd4501fd903af5be7c))
+* **extras:** add koda dark and light theme for Ghostty ([#69](https://github.com/oskarnurm/koda.nvim/issues/69)) ([cf23e9c](https://github.com/oskarnurm/koda.nvim/commit/cf23e9cc900ca5db4a807029188cda9d34d986cf))
+* **extras:** add koda dark and light theme for wezterm ([#67](https://github.com/oskarnurm/koda.nvim/issues/67)) ([a1ec3a4](https://github.com/oskarnurm/koda.nvim/commit/a1ec3a42c40b1e5338593675832968374098c76d))
+* **extras:** add lazygit light and dark theme ([#70](https://github.com/oskarnurm/koda.nvim/issues/70)) ([2b4e5f4](https://github.com/oskarnurm/koda.nvim/commit/2b4e5f470499e429f022e7204f9ed790729fc04a))
+* **lsp:** link `type.modifier` and `namespace.attribute` to `Keyword` ([e665567](https://github.com/oskarnurm/koda.nvim/commit/e6655677661ca0f9692f5566d6a2930620660f6e))
+* **treesitter:** link punctuation and brackets to `Normal` instead ([f2a48e4](https://github.com/oskarnurm/koda.nvim/commit/f2a48e4ef2d57a6ed015c1544fa28b8315d97530))
+* update lifetime, module and types highlights to be more emphasized ([#75](https://github.com/oskarnurm/koda.nvim/issues/75)) ([5ac352d](https://github.com/oskarnurm/koda.nvim/commit/5ac352d208a7e99ac7cfd4de37774774925057c4))
+
+
+### Bug Fixes
+
+* **extras:** change fzf prompt color ([5ec4ac3](https://github.com/oskarnurm/koda.nvim/commit/5ec4ac391a5d794c5a58f12881ba413fb49c8524))
+* **extras:** fix wrong background hue in WezTerm ([5fdaa97](https://github.com/oskarnurm/koda.nvim/commit/5fdaa9791c891c4af0e7770903af75d7d2cc0329))
+* **palette:** fix `pink` and `cyan` being too bright on light mode ([7582718](https://github.com/oskarnurm/koda.nvim/commit/7582718aba62dacd064f5095d8d3c5bd604751cf))
+* **syntax:** explicitly set `Macro` to `const` color ([be1e3d2](https://github.com/oskarnurm/koda.nvim/commit/be1e3d27650d2cf8bf00a04a2091378ed7c81572))
+
 ## [2.6.0](https://github.com/oskarnurm/koda.nvim/compare/v2.5.0...v2.6.0) (2026-01-31)
 
 
