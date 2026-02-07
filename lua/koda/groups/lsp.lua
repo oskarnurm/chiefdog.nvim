@@ -5,17 +5,14 @@ local M = {}
 function M.get_hl(c)
   -- stylua: ignore
   return {
-    DiagnosticOK                        = { fg = c.success },
-    DiagnosticError                     = { fg = c.danger },
-    DiagnosticWarn                      = { fg = c.warning },
-    DiagnosticHint                      = { fg = c.info },
-    DiagnosticInfo                      = { fg = c.fg },
-    LspInlayHint                        = { fg = c.comment },
+    DiagnosticError                     = { fg   = c.danger },
+    DiagnosticHint                      = { fg   = c.info },
+    DiagnosticInfo                      = { fg   = c.fg },
+    DiagnosticOK                        = { fg   = c.success },
+    DiagnosticWarn                      = { fg   = c.warning },
+    LspInlayHint                        = { fg   = c.comment },
     ["@lsp.type.comment"]               = {}, -- use treesitter styles
-    ["@lsp.typemod.class.declaration"]  = { link = "Function" },
-    ["@lsp.typemod.class.constructor"]  = { link = "Function" },
-    ["@lsp.typemod.class.abstract"]     = { link = "Function" },
-    ["@lsp.type.namespace"]             = { link = "Normal" },
+    ["@lsp.type.lifetime"]              = { fg   = c.const },
   }
 end
 
