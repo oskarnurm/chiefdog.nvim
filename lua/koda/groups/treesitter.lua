@@ -25,7 +25,7 @@ function M.get_hl(c, opts)
     ["@string.special.path"]           = { link = "Special" },
     ["@string.special.url"]            = { link = "Underlined" },
     ["@character"]                     = { link = "Character" },
-    ["@character.special"]             = { link = "Special" },
+    ["@character.special"]             = { link = "Character" },
     ["@boolean"]                       = { link = "Boolean" },
     ["@number"]                        = { link = "Number" },
     ["@number.float"]                  = { link = "Number" },

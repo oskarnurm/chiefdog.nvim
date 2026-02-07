@@ -8,7 +8,7 @@ function M.get_hl(c, opts)
     Comment         = { fg = c.comment, style = opts.styles.comments },
     Constant        = { fg = c.const, style = opts.styles.constants },
     String          = { fg = c.string, style = opts.styles.strings },
-    Character       = { link = "String" },
+    Character       = { fg = c.char },
     Number          = { fg = c.const, style = opts.styles.constants },
     Boolean         = { fg = c.const, style = opts.styles.constants },
     Float           = { fg = c.const, style = opts.styles.constants },
