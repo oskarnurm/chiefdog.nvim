@@ -117,6 +117,7 @@ require("koda").setup({
         emphasis   = "#ffffff",
         func       = "#ffffff",
         string     = "#ffffff",
+        char       = "#ffffff",
         const      = "#d9ba73",
         highlight  = "#458ee6",
         info       = "#8ebeec",
