@@ -29,7 +29,7 @@ function M.get_hl(c, opts)
     ["@boolean"]                       = { link = "Boolean" },
     ["@number"]                        = { link = "Number" },
     ["@number.float"]                  = { link = "Number" },
-    ["@type"]                          = { link = "Identifier" },
+    ["@type"]                          = { link = "Type" },
     ["@type.builtin"]                  = { link = "Type" },
     ["@type.definition"]               = { link = "Identifier" },
     ["@attribute"]                     = { link = "Keyword" },
