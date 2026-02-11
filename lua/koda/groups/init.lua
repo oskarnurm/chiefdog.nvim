@@ -58,6 +58,15 @@ function M.setup(colors, opts)
           groups[group] = true
         end
       end
+      -- Special case: detect individual mini.* modules (mini.pick, mini.icons, etc.)
+      if not groups.mini then
+        for plugin_name, _ in pairs(lazy_plugins) do
+          if plugin_name:match("^mini%.") then
+            groups.mini = true
+            break
+          end
+        end
+      end
     end
     if vim.pack then -- try vim.pack
       local ok, packdata = pcall(vim.pack.get, nil, { info = false })
@@ -65,6 +74,10 @@ function M.setup(colors, opts)
         for _, plugin in ipairs(packdata) do
           if plugin.active and M.plugins[plugin.spec.name] then
             groups[M.plugins[plugin.spec.name]] = true
+          end
+          -- Special case: detect individual mini.* modules
+          if plugin.active and plugin.spec.name:match("^mini%.") then
+            groups.mini = true
           end
         end
       end
