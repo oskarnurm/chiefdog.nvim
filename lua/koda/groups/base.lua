@@ -14,7 +14,7 @@ function M.get_hl(c, opts)
     TermCursor        = { link = "Cursor" },
     lCursor           = { link = "Cursor" },
     CursorIM          = { link = "Cursor" },
-    CursorColumn      = { link = "Cursor" },
+    CursorColumn      = { bg = c.line },
     CursorLine        = { bg = c.line },
     ColorColumn       = { bg = c.line },
     CursorLineNr      = { fg = c.border, bold = true },
