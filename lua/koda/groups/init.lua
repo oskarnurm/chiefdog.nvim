@@ -76,7 +76,7 @@ function M.setup(colors, opts)
             groups[M.plugins[plugin.spec.name]] = true
           end
           -- Special case: detect individual mini.* modules
-          if plugin.active and plugin.spec.name:match("^mini%.") then
+          if not groups.mini and plugin.active and plugin.spec.name:match("^mini%.") then
             groups.mini = true
           end
         end
