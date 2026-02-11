@@ -13,7 +13,7 @@ function M.get_hl(c)
     MiniIconsCyan             = { fg = c.info },
     MiniIconsGreen            = { fg = c.success },
     MiniIconsOrange           = { fg = c.warning },
-    MiniIconsPurple           = { fg = c.pink },
+    MiniIconsPurple           = { fg = c.orange },
     MiniIconsRed              = { fg = c.danger },
     MiniIconsYellow           = { fg = c.const },
   }
