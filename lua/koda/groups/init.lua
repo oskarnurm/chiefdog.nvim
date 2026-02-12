@@ -69,6 +69,13 @@ function M.setup(colors, opts)
         end
       end
     end
+    if _G.MiniDeps then -- try mini.deps
+      for _, plugin in ipairs(_G.MiniDeps.get_session()) do
+        if M.plugins[plugin.name] then
+          groups[M.plugins[plugin.name]] = true
+        end
+      end
+    end
   end
 
   -- Sort (in-place) group names for consistent cache keys
