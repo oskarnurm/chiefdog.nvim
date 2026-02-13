@@ -1,5 +1,36 @@
 # Changelog
 
+## [2.7.0](https://github.com/oskarnurm/koda.nvim/compare/v2.6.0...v2.7.0) (2026-02-13)
+
+
+### Features
+
+* add `char` to palette and link it ([#77](https://github.com/oskarnurm/koda.nvim/issues/77)) ([1387d72](https://github.com/oskarnurm/koda.nvim/commit/1387d72494a43171024ee34fd224c6f34e03f6c3))
+* add get_palette() API for accessing colors ([#61](https://github.com/oskarnurm/koda.nvim/issues/61)) ([54b41b1](https://github.com/oskarnurm/koda.nvim/commit/54b41b19a883911efa0ca12dca3b2fdb2bb49e6a))
+* add group loading support for plugins loaded with mini.deps ([#86](https://github.com/oskarnurm/koda.nvim/issues/86)) ([92f5fbd](https://github.com/oskarnurm/koda.nvim/commit/92f5fbd0177e8a458b741ede2063e5200032b872))
+* **api:** expose blend function for user configuration ([#64](https://github.com/oskarnurm/koda.nvim/issues/64)) ([a09b004](https://github.com/oskarnurm/koda.nvim/commit/a09b004b576667d3e0c938c0b1de52a287088fc5))
+* **extra:** add kitty theme ([#80](https://github.com/oskarnurm/koda.nvim/issues/80)) ([27b0b65](https://github.com/oskarnurm/koda.nvim/commit/27b0b65456e47ad5991e08e35dc7fa34768d9ebc))
+* **extras:** add fzf dark and light theme ([#74](https://github.com/oskarnurm/koda.nvim/issues/74)) ([22061f3](https://github.com/oskarnurm/koda.nvim/commit/22061f3fe91472addf9017dd4501fd903af5be7c))
+* **extras:** add koda dark and light theme for Ghostty ([#69](https://github.com/oskarnurm/koda.nvim/issues/69)) ([cf23e9c](https://github.com/oskarnurm/koda.nvim/commit/cf23e9cc900ca5db4a807029188cda9d34d986cf))
+* **extras:** add koda dark and light theme for wezterm ([#67](https://github.com/oskarnurm/koda.nvim/issues/67)) ([a1ec3a4](https://github.com/oskarnurm/koda.nvim/commit/a1ec3a42c40b1e5338593675832968374098c76d))
+* **extras:** add lazygit light and dark theme ([#70](https://github.com/oskarnurm/koda.nvim/issues/70)) ([2b4e5f4](https://github.com/oskarnurm/koda.nvim/commit/2b4e5f470499e429f022e7204f9ed790729fc04a))
+* **groups:** add fallback check for standalone mini plugins when using deps ([8c3b21b](https://github.com/oskarnurm/koda.nvim/commit/8c3b21b7de14009ef7be7445e3015be415cf4cf3))
+* **lsp:** highlight semantic types more granularly ([#79](https://github.com/oskarnurm/koda.nvim/issues/79)) ([4656c35](https://github.com/oskarnurm/koda.nvim/commit/4656c35fa23b1c761ae534ecc959402571348676))
+* **lsp:** link `type.modifier` and `namespace.attribute` to `Keyword` ([e665567](https://github.com/oskarnurm/koda.nvim/commit/e6655677661ca0f9692f5566d6a2930620660f6e))
+* **treesitter:** link punctuation and brackets to `Normal` instead ([f2a48e4](https://github.com/oskarnurm/koda.nvim/commit/f2a48e4ef2d57a6ed015c1544fa28b8315d97530))
+* update lifetime, module and types highlights to be more emphasized ([#75](https://github.com/oskarnurm/koda.nvim/issues/75)) ([5ac352d](https://github.com/oskarnurm/koda.nvim/commit/5ac352d208a7e99ac7cfd4de37774774925057c4))
+
+
+### Bug Fixes
+
+* change CursorColumn bg to use line color ([#82](https://github.com/oskarnurm/koda.nvim/issues/82)) ([c5cc9b1](https://github.com/oskarnurm/koda.nvim/commit/c5cc9b1cb4e56943a0e1b0d4e6e5463ae4ed8544))
+* **extras:** change fzf prompt color ([5ec4ac3](https://github.com/oskarnurm/koda.nvim/commit/5ec4ac391a5d794c5a58f12881ba413fb49c8524))
+* **extras:** fix wrong background hue in WezTerm ([5fdaa97](https://github.com/oskarnurm/koda.nvim/commit/5fdaa9791c891c4af0e7770903af75d7d2cc0329))
+* **icons:** add missing palette colors for mini.icons ([25c52c7](https://github.com/oskarnurm/koda.nvim/commit/25c52c710a5083cf6f3ac533d57fefecce7e2021))
+* **mini:** detect individual mini.* modules for group activation ([#83](https://github.com/oskarnurm/koda.nvim/issues/83)) ([cc592e1](https://github.com/oskarnurm/koda.nvim/commit/cc592e1ac66c4f12f8abb635d0f96fb81732d796))
+* **palette:** fix `pink` and `cyan` being too bright on light mode ([7582718](https://github.com/oskarnurm/koda.nvim/commit/7582718aba62dacd064f5095d8d3c5bd604751cf))
+* **syntax:** explicitly set `Macro` to `const` color ([be1e3d2](https://github.com/oskarnurm/koda.nvim/commit/be1e3d27650d2cf8bf00a04a2091378ed7c81572))
+
 ## [2.6.0](https://github.com/oskarnurm/koda.nvim/compare/v2.5.0...v2.6.0) (2026-01-31)
 
 
